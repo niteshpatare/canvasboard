@@ -169,7 +169,7 @@ function processData(xmlhttp) {
 function handler() {
   if(this.status == 200 && this.responseXML != null ) {
     // success!
-    processData(this.responseXML.getElementById('root').textContent);
+    processData(this);
   } else {
     // something went wrong
     console.log('Data not fetched');
