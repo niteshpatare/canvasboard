@@ -55,7 +55,9 @@ nav, article, nav ul li a,figure{
     border-radius:0px;
 }
 /* Article styles: */
-
+.ColorHex{
+	padding:3px;
+}
 #page{
 
     max-width:768px;
