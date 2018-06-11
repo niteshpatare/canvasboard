@@ -82,7 +82,7 @@ function toggleHouse(txt)
 			<table class='tblPalette' width="760">
 				<tr>
 					<td>
-						<div>Choose element color</div>
+						<div>Active color</div>
 						<div name="divPreview" id="divPreview" style="height:20px;width:32px;border:1px #000000 solid;"></div>
 					</td>
 						<td style="border:1px">
