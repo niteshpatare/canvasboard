@@ -33,7 +33,7 @@ $uvar=$_POST['msgval'];
                 if($uvar == "")
                 {
                
-                if(!file_exists("$gid.xml")){include "404.html"; exit;}
+                if(!file_exists("$gid.xml")){include "404.php"; exit;}
                
                 
          
@@ -135,7 +135,7 @@ function toggleHouse(txt)
  
 	<footer>
 
-		<h2>Site by: Nitesh Patare, Abhijit Kolhe and Rushikesh Jogle. 2010-11</h2>
+		<h2>Site 2010-11</h2>
 	</footer>  </section> 
     <!-- JavaScript Includes -->
 <script src="draw.js"></script>
