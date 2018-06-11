@@ -212,6 +212,6 @@ function getDraw()
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = handler;
-    xmlhttp.open("GET",bid+".xml",async=false);
+    xmlhttp.open("GET",bid+".xml");
     xmlhttp.send();
 }
