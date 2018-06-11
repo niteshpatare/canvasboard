@@ -24,7 +24,7 @@ $gid = $_GET['id'];
                 $test = $doc->save("$countfile-$key.xml");
                 
                // echo "$key";
-                echo "<meta http-equiv=\"Refresh\" content=\"0; url=home.php?id=$countfile-$key\">";
+                echo "<meta http-equiv=\"Refresh\" content=\"0; url=index.php?id=$countfile-$key\">";
 $uvar=$_POST['msgval'];               
                 exit;
             }
