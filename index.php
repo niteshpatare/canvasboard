@@ -3,15 +3,15 @@ $encrypt_key = "GJHsahakst1468464a";
 
 $gid = $_GET['id'];
 			if($gid=="")
-			{	 
+			{
                 $filename = "counter.txt";
                 $fp = fopen( $filename, "r" ) or die("Couldn't Generate Whiteboard");
                     while ( ! feof( $fp ) )
                     {
                     $countfile = fgets( $fp);
-                    $countfile++;                    
+                    $countfile++;
                     }
-                    
+
                 fclose( $fp );
                 $key = md5($encrypt_key.$countfile);
                 $fp = fopen( $filename, "w" ) or die("Couldn't generate whiteboard");
@@ -22,24 +22,24 @@ $gid = $_GET['id'];
                 $ele->nodeValue = $uvar;
                 $doc->appendChild( $ele );
                 $test = $doc->save("$countfile-$key.xml");
-                
+
                // echo "$key";
                 echo "<meta http-equiv=\"Refresh\" content=\"0; url=index.php?id=$countfile-$key\">";
-$uvar=$_POST['msgval'];               
+$uvar=$_POST['msgval'];
                 exit;
             }
             else
             {
                 if($uvar == "")
                 {
-               
+
                 if(!file_exists("$gid.xml")){include "404.php"; exit;}
-               
-                
-         
-                }      
-            }    
-           
+
+
+
+                }
+            }
+
 ?>
 
 <!DOCTYPE html>
@@ -68,76 +68,122 @@ function toggleHouse(txt)
       <div class="logo">
         <h1><a href="#"><span>HTML5 CANVAS </span><small>The FUTURE of the WEB! </small></a></h1>
       </div>
-  
-	  
+
+
       <div class="clr"></div>
     </div>
   </div>
 
-<section id="page"> 
+<section id="page">
 	 <header> <!-- Defining the header section of the page with the appropriate tag -->
-  
+
  <nav class="clear"> <!-- The nav link semantically marks your main site navigation -->
-      
-        <ul>                
-		<table class='tblPalette' width="760">		
-		<td><div name="divPreview" id="divPreview" style="height:20px;width:32px;border:1px #000000 solid;"></div></td>
-		<td style="border:1px"><form name="frmColour"><input readonly type="text" id="ColorHex" name="ColorHex" size="10" style="height:24px;width:56px;font-size:12px;background: transparent;align=middle;"></form></td>
-        
-        <td><img id="dtool" src="img/pen.png" name="pencil" value="pencil" onClick="setType('pencil');"/></td>
-        <td><img id="dtool" src="img/annLine.png" name="line" value="line" onClick="setType('line');"/></td>
-        <td><img id="dtool" src="img/annRect.png" name="rect" value="rect" onClick="setType('rect');"/></td>
-        <td><img id="dtool" src="img/circle.png" name="circle" value="circle" onClick="setType('circle');"/></td>
-        <td><img id="dtool" src="img/annTextEdit.png" name="textt" value="textt" onClick="setType('textt');"/></td>
-        <td><img id="dtool" src="img/n1.png" name="one" value="one" onClick="fontsa1(1);"/></td>
-        <td><img id="dtool" src="img/n2.png" name="two" value="two" onClick="fontsa1(2);"/></td>
-        <td><img id="dtool" src="img/n3.png" name="three" value="three" onClick="fontsa1(3);"/></td>
-        <td><img id="dtool" src="img/n4.png" name="four" value="four" onClick="fontsa1(4);"/></td>
-        <td><img id="dtool" src="img/eraser.png" name="eraser" value="erase" onClick="setType('erase');"/></td>
-		<td><img id="dtool" src="img/bw.png" name="bw" value="bw" onClick="bnwwb();"/></td>
-        <td><img id="dtool" src="img/saves.png" name="save" value="save" onClick="saveas();"/></td>
-
-        
-		</table>
-        </ul>
-            <ul>
-            <table class='tblPalettenew' width="750">
-			<td style="background-color: rgb(0, 0, 0);" onClick=mousedowna1(pc1);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td style="background-color: rgb(255, 255, 255);" onClick=mousedowna1(pc2);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td style="background-color: rgb(153, 153, 153);" onClick=mousedowna1(pc4);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td style="background-color: rgb(0, 153, 0);" onClick=mousedowna1(pc5);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td style="background-color: rgb(0, 153, 255);" onClick=mousedowna1(pc10);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td style="background-color: rgb(153, 0, 255);" onClick=mousedowna1(pc12);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td style="background-color: rgb(153, 68, 0);" onClick=mousedowna1(pc13);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td style="background-color: rgb(255, 0, 0);" onClick=mousedowna1(pc14);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td style="background-color: rgb(255, 255, 0);" onClick=mousedowna1(pc15);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td style="background-color: rgb(0, 255, 0);" onClick=mousedowna1(pc16);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td style="background-color: rgb(0, 255, 255);" onClick=mousedowna1(pc17);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td style="background-color: rgb(0, 0, 255);" onClick=mousedowna1(pc18);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td style="background-color: rgb(255, 0, 255);" onClick=mousedowna1(pc19);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td style="background-color: rgb(255, 153, 68);" onClick=mousedowna1(pc20);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <ul>
+			<table class='tblPalette' width="760">
+				<tr>
+					<td>
+						<div>Choose element color</div>
+						<div name="divPreview" id="divPreview" style="height:20px;width:32px;border:1px #000000 solid;"></div>
+					</td>
+						<td style="border:1px">
+							<div>(X,Y)</div>
+							<form name="frmColour">
+								<input readonly type="text" id="ColorHex" name="ColorHex" size="10" style="height:24px;width:56px;font-size:12px;background: transparent;align=middle;">
+							</form>
+						</td>
+	        <td>
+						<div>Pencil</div>
+						<img id="dtool" src="img/pen.png" name="pencil" value="pencil" onClick="setType('pencil');"/>
+					</td>
+	        <td>
+						<div>Line</div>
+						<img id="dtool" src="img/annLine.png" name="line" value="line" onClick="setType('line');"/>
+					</td>
+	        <td>
+						<div>Rectangle</div>
+						<img id="dtool" src="img/annRect.png" name="rect" value="rect" onClick="setType('rect');"/>
+					</td>
+	        <td>
+						<div>Circle</div>
+						<img id="dtool" src="img/circle.png" name="circle" value="circle" onClick="setType('circle');"/>
+					</td>
+	        <td>
+						<div>Text</div>
+						<img id="dtool" src="img/annTextEdit.png" name="textt" value="textt" onClick="setType('textt');"/>
+					</td>
+	        <td>
+						<div>Text size 1</div>
+						<img id="dtool" src="img/n1.png" name="one" value="one" onClick="fontsa1(1);"/>
+					</td>
+	        <td>
+						<div>Text size 2</div>
+						<img id="dtool" src="img/n2.png" name="two" value="two" onClick="fontsa1(2);"/>
+					</td>
+	        <td>
+						<div>Text size 3</div>
+						<img id="dtool" src="img/n3.png" name="three" value="three" onClick="fontsa1(3);"/>
+					</td>
+	        <td>
+						<div>Text size 4</div>
+						<img id="dtool" src="img/n4.png" name="four" value="four" onClick="fontsa1(4);"/>
+					</td>
+	        <td>
+						<div>Erase Canvas</div>
+						<img id="dtool" src="img/eraser.png" name="eraser" value="erase" onClick="setType('erase');"/>
+					</td>
+					<td>
+						<div>Black and White Canvas</div>
+						<img id="dtool" src="img/bw.png" name="bw" value="bw" onClick="bnwwb();"/>
+					</td>
+	        <td>
+						<div>Save as Image</div>
+						<img id="dtool" src="img/saves.png" name="save" value="save" onClick="saveas();"/>
+					</td>
+				</tr>
 			</table>
-            </ul>
+    </ul>
+    <ul>
+    	<table class='tblPalettenew' width="750">
+				<tr>
+					<span>Choose color for canvas element</span>
+				<tr>
+				<tr>
+					<td style="background-color: rgb(0, 0, 0);" onClick=mousedowna1(pc1);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td style="background-color: rgb(255, 255, 255);" onClick=mousedowna1(pc2);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td style="background-color: rgb(153, 153, 153);" onClick=mousedowna1(pc4);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td style="background-color: rgb(0, 153, 0);" onClick=mousedowna1(pc5);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td style="background-color: rgb(0, 153, 255);" onClick=mousedowna1(pc10);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td style="background-color: rgb(153, 0, 255);" onClick=mousedowna1(pc12);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td style="background-color: rgb(153, 68, 0);" onClick=mousedowna1(pc13);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td style="background-color: rgb(255, 0, 0);" onClick=mousedowna1(pc14);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td style="background-color: rgb(255, 255, 0);" onClick=mousedowna1(pc15);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td style="background-color: rgb(0, 255, 0);" onClick=mousedowna1(pc16);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td style="background-color: rgb(0, 255, 255);" onClick=mousedowna1(pc17);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td style="background-color: rgb(0, 0, 255);" onClick=mousedowna1(pc18);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td style="background-color: rgb(255, 0, 255);" onClick=mousedowna1(pc19);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td style="background-color: rgb(255, 153, 68);" onClick=mousedowna1(pc20);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<tr>
+			</table>
+  </ul>
+</nav>
 
-        </nav>
-        
         </header>
 	<content>
-    
-	<div id="container2">   
+
+	<div id="container2">
 	<canvas id="canvas2" onmouseover="toggleHouse(true);" onmouseout="toggleHouse(false);" linecap="Butt" width="768" height="400"></canvas>
     <canvas id="c2" linecap="Butt" width="768" height="400" position=absolute style="border: 1px solid #000;left: 0;top: 0;z-index: 1;"></canvas>
 	<div class="sharethis-inline-share-buttons"></div>
 	</div>
-   
-    
-    
+
+
+
     </content>
- 
+
 	<footer>
 
 		<small>Site by pnuts27</small>
-	</footer>  </section> 
+	</footer>  </section>
     <!-- JavaScript Includes -->
 <script src="draw.js"></script>
 <script src="user.js"></script>
