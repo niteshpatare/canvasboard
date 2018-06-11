@@ -111,24 +111,24 @@ function toggleHouse(txt)
 						<div>Text</div>
 						<img id="dtool" src="img/annTextEdit.png" name="textt" value="textt" onClick="setType('textt');"/>
 					</td>
-	        <td>
+				</tr>
+				<tr>
+					<td>
 						<div>Stroke size 1</div>
 						<img id="dtool" src="img/n1.png" name="one" value="one" onClick="fontsa1(1);"/>
 					</td>
-	        <td>
+					<td>
 						<div>Stroke size 2</div>
 						<img id="dtool" src="img/n2.png" name="two" value="two" onClick="fontsa1(2);"/>
 					</td>
-	        <td>
+					<td>
 						<div>Stroke size 3</div>
 						<img id="dtool" src="img/n3.png" name="three" value="three" onClick="fontsa1(3);"/>
 					</td>
-	        <td>
+					<td>
 						<div>Stroke size 4</div>
 						<img id="dtool" src="img/n4.png" name="four" value="four" onClick="fontsa1(4);"/>
 					</td>
-				</tr>
-				<tr>
 					<td>
 						<div>Erase Canvas</div>
 						<img id="dtool" src="img/eraser.png" name="eraser" value="erase" onClick="setType('erase');"/>
