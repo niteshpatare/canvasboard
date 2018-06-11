@@ -11,7 +11,7 @@ line-height: 18px;
 
 nav{
 
-    background:url(img/gradient_light.jpg) repeat-x 50% 50% #f8f8f8;
+    background: repeat-x 50% 50% #f8f8f8;
 
     position:relative;
 
@@ -22,12 +22,6 @@ nav{
     top: 0.5em;
     
     border:2px solid #999999;
-
-    -moz-box-shadow:0 1px 1px #333333;
-
-    -webkit-box-shadow:0 1px 1px #333333;
-
-    box-shadow:0 1px 1px #333333;
     
       
 }
@@ -56,9 +50,9 @@ nav ul li a:hover{
 nav, article, nav ul li a,figure{
 
     /* Applying CSS3 rounded corners: */
-    -moz-border-radius:10px;
-    -webkit-border-radius:10px;
-    border-radius:10px;
+    -moz-border-radius:0px;
+    -webkit-border-radius:0px;
+    border-radius:0px;
 }
 /* Article styles: */
 
@@ -87,7 +81,7 @@ nav, article, nav ul li a,figure{
    #container2 { position: relative;}
          
 td{text-align:center;vertical-align:middle;}
-		.tblPalettenew{cursor:pointer;background:#FFFFFF;height:100%;width:100%;line-height:3px;font-size:1px;}
+		.tblPalettenew{cursor:pointer;background:#FFFFFF;height:100%;width:100%;line-height:25px;font-size:1px;}
 		.tblPalettenew td{border:1px #666 solid;}		
 		 
           
