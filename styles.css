@@ -64,7 +64,7 @@ nav, article, nav ul li a,figure{
 
 #page{
 
-    width:768px;
+    max-width:768px;
     margin:0 auto;
     position:relative;
    
@@ -162,7 +162,7 @@ a {
 .header_resize {
 	margin:0 auto;
 	padding:0;
-	width:970px;
+	max-width:768px;
 }
 
 .footer {
