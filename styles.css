@@ -93,7 +93,7 @@ nav, article, nav ul li a,figure{
    #container2 { position: relative;}
 
 td{text-align:center;vertical-align:middle;}
-		.tblPalettenew{cursor:pointer;background:#FFFFFF;height:100%;width:100%;line-height:25px;font-size:1px;}
+		.tblPalettenew{cursor:pointer;height:100%;width:100%;line-height:25px;font-size:1px;}
 		.tblPalettenew td{border:1px #666 solid;}
 
 
