@@ -130,11 +130,11 @@ function toggleHouse(txt)
 						<img id="dtool" src="img/n4.png" name="four" value="four" onClick="fontsa1(4);"/>
 					</td>
 					<td>
-						<div>Erase Canvas</div>
+						<div>Erase</div>
 						<img id="dtool" src="img/eraser.png" name="eraser" value="erase" onClick="setType('erase');"/>
 					</td>
 					<td>
-						<div>Black and White Canvas</div>
+						<div>Black and White</div>
 						<img id="dtool" src="img/bw.png" name="bw" value="bw" onClick="bnwwb();"/>
 					</td>
 					<td>
