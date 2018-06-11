@@ -184,13 +184,13 @@ function toggleHouse(txt)
 
 	<footer>
 
-		<small>Site by pnuts27</small>
+		<small>Site by pnuts27. Follow- <a href='https://twitter.com/knytesh' target="_blank"></a></small>
 	</footer>  </section>
     <!-- JavaScript Includes -->
 <script src="draw.js"></script>
 <script src="user.js"></script>
 <script src="ret.js"></script>
 <script src="//platform-api.sharethis.com/js/sharethis.js#property=5b1e6a27c05d470011577457&product=inline-share-buttons"></script>
-<span style="display:none" id='test'></span>
+
 </body>
 </html>
