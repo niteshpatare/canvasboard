@@ -148,10 +148,10 @@ function processData(xmlhttp) {
             txttpx = new ttext();
 
             txttpx.x = x[j].firstChild.nodeValue;
-    txttpx.y = y[j].firstChild.nodeValue;
-    txttpx.c1 = w[j].firstChild.nodeValue;
-    txttpx.d = h[j].firstChild.nodeValue;
-    txttpx.ft = ft[j].firstChild.nodeValue;
+            txttpx.y = y[j].firstChild.nodeValue;
+            txttpx.c1 = w[j].firstChild.nodeValue;
+            txttpx.d = h[j].firstChild.nodeValue;
+            txttpx.ft = ft[j].firstChild.nodeValue;
         }
 
 
@@ -166,15 +166,7 @@ function processData(xmlhttp) {
   }
 }
 
-function handler() {
-  if(this.status == 200 && this.responseXML != null ) {
-    // success!
-    processData(this);
-  } else {
-    // something went wrong
-    console.log('Data not fetched');
-  }
-}
+
 
 function getDraw()
 {
@@ -208,6 +200,19 @@ function getDraw()
     texts = [];
     var txttpx = new ttext();
     var tex_arr = [];
+
+
+
+    function handler() {
+      if(this.status == 200 && this.responseXML != null ) {
+        // success!
+        processData(this);
+      } else {
+        // something went wrong
+        console.log('Data not fetched');
+      }
+    }
+
 
 
     var xmlhttp = new XMLHttpRequest();
