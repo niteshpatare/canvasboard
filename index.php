@@ -136,7 +136,7 @@ function toggleHouse(txt)
  
 	<footer>
 
-		<h2>Site 2010-11</h2>
+		<small>Site by pnuts27</small>
 	</footer>  </section> 
     <!-- JavaScript Includes -->
 <script src="draw.js"></script>
