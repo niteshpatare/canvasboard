@@ -16,8 +16,8 @@ line-height: 1.6;
 .tblPalette{
   font-size: 12px;
 }
-table.tblPalette tr{
-  margin-bottom: 10px;
+.tblPalette tr > td > div{
+  margin-bottom: 5px;
 }
 nav{
 
