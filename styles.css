@@ -1,29 +1,36 @@
+html {
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+}
 body {
 
 line-height: 1;
 
 font-family: Verdana, Arial, Helvetica, sans-serif;
 color:#565656;
-font-size: 14px;
-line-height: 18px;
-  
+color: #4d4d4d;
+font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Helvetica","Arial",sans-serif;
+font-size: 1rem;
+line-height: 1.6;
 }
-
+.tblPalette{
+  font-size: 12px;
+}
 nav{
 
     background: repeat-x 50% 50% #f8f8f8;
 
     position:relative;
 
-    left:0; 
+    left:0;
     padding: 5px;
-    
-    
+
+
     top: 0.5em;
-    
+
     border:2px solid #999999;
-    
-      
+
+
 }
 
 nav ul li{
@@ -43,8 +50,8 @@ nav ul li a:hover{
 }
 
  img{
-    
-     cursor:pointer; 
+
+     cursor:pointer;
  }
 
 nav, article, nav ul li a,figure{
@@ -63,30 +70,30 @@ nav, article, nav ul li a,figure{
     max-width:768px;
     margin:0 auto;
     position:relative;
-   
+
 }
 
  #canvas2 { cursor:crosshair;border: 1px solid #000;left: 0; top: 0; z-index: 1;position: absolute;}
     	* {
 			margin:0 auto;
 			padding: 0;
-            top: 1em;          
+            top: 1em;
 		}
-        
+
   #c2 { cursor:crosshair}
     	* {
 			margin:0 auto;
 			padding: 0;
-            top: 1em;          
+            top: 1em;
 		}
-        
+
    #container2 { position: relative;}
-         
+
 td{text-align:center;vertical-align:middle;}
 		.tblPalettenew{cursor:pointer;background:#FFFFFF;height:100%;width:100%;line-height:25px;font-size:1px;}
-		.tblPalettenew td{border:1px #666 solid;}		
-		 
-          
+		.tblPalettenew td{border:1px #666 solid;}
+
+
 /* Footer */
 footer {
 	border-top : 1px dotted #B5B3A9;
@@ -164,5 +171,3 @@ a {
 .footer {
 	background-color:#2d2f3d;
 }
-
-	
