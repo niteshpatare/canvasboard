@@ -184,7 +184,7 @@ function toggleHouse(txt)
 
 	<footer>
 
-		<small>Site by pnuts27. Follow- <a href='https://twitter.com/knytesh' target="_blank"></a></small>
+		<small>Site by pnuts27. Follow- <a href='https://twitter.com/knytesh' target="_blank">knytesh</a></small>
 	</footer>  </section>
     <!-- JavaScript Includes -->
 <script src="draw.js"></script>
