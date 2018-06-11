@@ -16,6 +16,9 @@ line-height: 1.6;
 .tblPalette{
   font-size: 12px;
 }
+table.tblPalette tr{
+  margin-bottom: 5px;
+}
 nav{
 
     background: repeat-x 50% 50% #f8f8f8;
