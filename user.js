@@ -10,7 +10,7 @@ divPreview.style.background = '#000000';
 var INTERVAL = 2000;
 var canvasValid = false;
 var stylePaddingLeft, stylePaddingTop, styleBorderLeft, styleBorderTop;
-      var pc1 = "rgb(0, 0, 0)";   //palette 
+      var pc1 = "rgb(0, 0, 0)";   //palette
 		var pc2 = "rgb(255, 255, 255)";
 		var pc4 = "rgb(153, 153, 153)";
 		var pc5 = "rgb(0, 153, 0)";
@@ -23,7 +23,7 @@ var stylePaddingLeft, stylePaddingTop, styleBorderLeft, styleBorderTop;
 		var pc17 = "rgb(0, 255, 255)";
 		var pc18 = "rgb(0, 0, 255)";
 		var pc19 = "rgb(255, 0, 255)";
-		var pc20 = "rgb(255, 153, 68)";	
+		var pc20 = "rgb(255, 153, 68)";
 
 var tpixarray =[];
 function tpixel(){
@@ -34,41 +34,46 @@ function tpixel(){
 
 function init2() {
 
-   
+
   canvas = document.getElementById('canvas2');
   HEIGHT = canvas.height;
   WIDTH = canvas.width;
   ctx = canvas.getContext('2d');
 
-  context = canvas.getContext('2d');	
+  context = canvas.getContext('2d');
   c2 = document.getElementById("c2");
-  ctx2 = c2.getContext("2d");	
+  ctx2 = c2.getContext("2d");
 
 
-			
+
 	context.lineWidth=varsizeup;
     ctx2.lineWidth=varsizeup;
 	context.strokeStyle = varcolourwb;
-	context.save();    
+	context.save();
 
   //fixes a problem where double clicking causes text to get selected on the canvas
   canvas.onselectstart = function () { return false; }
-  
 
-  
+
+
   // make mainDraw() fire every INTERVAL milliseconds
   setInterval(getDraw, INTERVAL);
-  
+
   canvas.onmousedown = e_canvas;
   canvas.onmouseup = e_canvas;
   canvas.onmousemove = e_canvas;
 
- 
+	// Register touch event handlers
+	canvas.addEventListener('touchstart', e_canvas, false);
+	canvas.addEventListener('touchmove', e_canvas, false);
+	//canvas.addEventListener('touchcancel', e_canvas, false);
+	canvas.addEventListener('touchend', e_canvas, false);
+
 }
 //
 
 function e_canvas(e)
-{        
+{
             if (e.layerX || e.layerX == 0) { // Firefox
 		e._x = e.layerX;
 		e._y = e.layerY;
@@ -76,129 +81,129 @@ function e_canvas(e)
 		e._x = e.offsetX;
 		e._y = e.offsetY;
 		}
-		
+
 			 mx = e._x - this.offsetLeft;
 			 my = e._y - this.offsetTop;
-             
-			curtxt.value = "["+mx+","+my+"]"; 
+
+			curtxt.value = "["+mx+","+my+"]";
 			var func = type;
-            
+
 			 if(func)
 			 {
 				 setType(type);
-			 }		
+			 }
 }
 
 function setType(utype)
-{ 
+{
 	if( utype == "erase")
-	{    
-	  
-    type = erase; 
-	                        
+	{
+
+    type = erase;
+
 
         //context.strokeStyle = "rgba(255, 255, 255, 255)";
 
 	context.globalCompositeOperation = "copy";
-	context.strokeStyle = ("rgba(255,255,255,255)"); 
+	context.strokeStyle = ("rgba(255,255,255,255)");
   // context.fillStyle = "rgba(0,0,0,0)";
   divPreview.style.background = rgba(255, 255, 255, 255);
-  
+
 
 	}
 
 
 	if( utype == "pencil")
-	{    
-	
-    type = pencil; 
-  
+	{
+
+    type = pencil;
+
 this.onmousedown = function(e)
-{     
+{
 
 
 
     if(inhouse)
         {
-          
+
 	context.beginPath();
 	context.moveTo(mx, my);
-  
+
     type.x1 = mx;
 	type.y1 = my;
-    
+
 	type.started = true;
         trep = type.x1+"-"+type.y1;
         var freed = new tpixel();
         freed.x = type.x1;
         freed.y = type.y1;
         tpixarray.push(freed);
-        
+
 	}
-         
+
 };
 
 this.onmousemove = function(e)
 {
                        if (type.started && inhouse) {
-                        
+
 						type.x2 = mx;
 	                       type.y2 = my;
-                    	       
+
                             context.lineTo(mx, my);
-                             
+
                            trep = trep + ","+type.x2+"-"+type.y2;
                                           //sendline(this.x1,this.y1,this.x2,this.y2);
-                          
-                            
+
+
                             context.stroke();
                             var freed = new tpixel();
         freed.x = type.x2;
         freed.y = type.y2;
         tpixarray.push(freed);
-        
+
                      	}
 };
 this.onmouseup = function(e)
 {
                        if (type.started && inhouse) {
-                    	 
+
                     	   this.onmousemove(e);
 							//var creed = new tcolor();
 							//creed.c1 = varcolourwb;
 							//tpixarray.push(creed);
-						
+
                          // trep = trep + "&"+varcolourwb;
                            sendlinep(trep,utype,varcolourwb,varsizeup);
-						   
+
                            addpencil(tpixarray);
 						   // addpencil(creed);
 							//alert(varcolourwb);
                            tpixarray = [];
-						  
+
                         }
                            type.started = false;
-						   
+
 };
 	}
 	if( utype == "line")
 	{
-			type = line;    
+			type = line;
        this.onmousedown = function(e)
              {        if(inhouse)
                       {
                                     type.started = true;
 									type.x1 = mx;
-									type.y1 = my;	
+									type.y1 = my;
                         }
              };
-             
+
             this.onmousemove = function(e)
              {
                                     if (type.started && inhouse) {
-								    
+
                                     context.beginPath();
-									context.moveTo(type.x1,type.y1); 
+									context.moveTo(type.x1,type.y1);
 									trep = type.x1+"-"+type.y1;
 									context.lineTo(mx,my);
                                     type.x2 = mx;
@@ -209,38 +214,38 @@ this.onmouseup = function(e)
                                     clear(ctx);
                                    // context.clearRect(0,0, 768,400);
                                    	context.stroke();
-                                    
-                                   
+
+
                                   	}
-                                    
+
              };
               this.onmouseup = function(e)
-             {                      
+             {
                                     if (type.started && inhouse) {
-                                    
+
 									this.onmousemove(e);
-									 type.started = false;  
-									  
-                                      addline(type.x1,type.y1,type.x2,type.y2,type.c1,varsizeup); 
-                                     
+									 type.started = false;
+
+                                      addline(type.x1,type.y1,type.x2,type.y2,type.c1,varsizeup);
+
 									     sendline(trep,utype);
-										
+
 									}
-                                    
-                                                                          
-                                     
-                                    
+
+
+
+
                                    //    alert(trep);
-             };	
-		
-       
-    
+             };
+
+
+
 	}
     if( utype == "rect")
 	{
-		type = rect;  
-		var x ,y ,w ,h;             
-	
+		type = rect;
+		var x ,y ,w ,h;
+
 this.onmousedown = function()
 {         if(inhouse)
                       {
@@ -253,7 +258,7 @@ this.onmousedown = function()
 this.onmousemove = function()
 {
                         if (type.started && inhouse) {
-						
+
                     	   x = Math.min(mx,  type.x0);
 							y = Math.min(my,  type.y0);
 							w = Math.abs(mx - type.x0);
@@ -266,43 +271,43 @@ this.onmousemove = function()
 this.onmouseup = function()
 {
                         if (type.started && inhouse) {
-                       
+
 						this.onmousemove(e);
-                         context.strokeRect(x, y, w, h);   
+                         context.strokeRect(x, y, w, h);
 						 trep = x+"-"+y+"-"+w+"-"+h+"-"+varcolourwb+"-"+varsizeup;
-						
+
 						 addRect(x, y, w, h, varcolourwb,varsizeup);
 						sendline(trep,utype);
 						 //alert(varcolourwb);
-						
+
 						}
 							type.started = false;
-            
+
 			}
-                        
-                             
+
+
 	}
     if( utype == "circle")
 	{
-          type = circle; 
+          type = circle;
 		var centerX,centerY,vrad;
 this.onmousedown = function(e)
-{      
+{
     if(inhouse)
-        { 
+        {
 		type.started = true;
     type.x0 = mx;
 	type.y0 = my;
-    
-	
-        
+
+
+
 	}
-         
+
 };
 this.onmousemove = function(e)
 {
                        if (type.started && inhouse) {
-                        
+
 						 centerX = Math.max(type.x0,mx) - Math.abs(type.x0 - mx)/2;
    						 centerY = Math.max(type.y0,my) - Math.abs(type.y0 - my)/2;
    						 vrad=((type.x0-centerX )+ (type.y0-centerY)); //to draw circle dn to up and right to left
@@ -310,59 +315,59 @@ this.onmousemove = function(e)
                     	   	context.arc(centerX, centerY, vrad ,0,Math.PI*2 ,true);
                      		context.clearRect(0,0, 768,400);
                              context.stroke();
-                             
+
                            trep = centerX+"-"+centerY+"-"+vrad+"-"+varcolourwb+"-"+varsizeup;
-                                         
+
                      	}
 };
 this.onmouseup = function(e)
 {
                        if (type.started && inhouse) {
-                    	 
-                    	   
+
+
 							type.started = false;
 							//alert(varsizeup);
                              addCirc(centerX, centerY, vrad, varcolourwb, varsizeup);
                              sendline(trep,utype);
-                      
+
 						}
 			}
-                            
+
 	}
     if( utype == "textt")
 	{
 		type = textt;
-		
+
 this.onmousedown = function(e)
-	{      
+	{
     if(inhouse)
-        { 
+        {
 		type.x0 = mx;
 		type.y0 = my;
 		varsizeup = context.lineWidth+25;
 		context.textBaseline = "alphabetic";
 		context.font = (varsizeup) + "pt Calibri";
-        
+
         context.fillStyle = varcolourwb;
 		//if inside the x,y coordinates
         var txtreply = prompt("Enter text: ","Hello World!");
-       	context.fillText(txtreply, type.x0,type.y0);	
-    	
+       	context.fillText(txtreply, type.x0,type.y0);
+
 		trep = type.x0+"-"+type.y0+"-"+varcolourwb+"-"+txtreply+"-"+varsizeup;
 		//varcolourwb = varcolourwb+"-"+txtreply;
 		addtext(type.x0,type.y0,varcolourwb,txtreply,varsizeup);
-		 
+
 		sendline(trep,utype);
 	//alert("h");
-	
-		}
-	};	
-	
-	
-			
 
-	}  
-     
+		}
+	};
+
+
+
+
+	}
+
 }
 
 function Obj(name) {
@@ -370,41 +375,41 @@ function Obj(name) {
 }
 
 function sendline(trep,utype) {
-   
-     
-	
+
+
+
     var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function()
 	{
 		if(xmlhttp.readyState == 4 && xmlhttp.status==200)
 		{
 			//document.getElementById('txtHint').value = utype;
-		}	
+		}
 	}
     xmlhttp.open("POST","post.php?id="+bid,true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	
+
     xmlhttp.send("umsg="+trep+"&umsgtype="+utype);
- 
+
 }
 
 function sendlinep(trep,utype,varcolourwb,varsizeup) {
-   
-     
-	
+
+
+
     var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function()
 	{
 		if(xmlhttp.readyState == 4 && xmlhttp.status==200)
 		{
 			//document.getElementById('txtHint').value = utype;
-		}	
+		}
 	}
     xmlhttp.open("POST","post.php?id="+bid,true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	
+
     xmlhttp.send("umsg="+trep+"&umsgtype="+utype+"&umsgclr="+varcolourwb+"&umsgft="+varsizeup);
- 
+
 }
 
 function saveas() {
@@ -413,18 +418,18 @@ window.open(canvas.toDataURL("image/png"));
 }
 
 function fontsa1(fpc){	//colors
-	
+
     if( fpc == "1" )   //remaining colors
-	{// 
+	{//
         context.lineWidth='4';
 						varsizeup = "4";
-						context.save();  
-                       
+						context.save();
+
 	}else if( fpc == "2" )   //remaining colors
 	{//
           context.lineWidth='6';
 						varsizeup = "6";
-						context.save(); 
+						context.save();
 	}else if( fpc == "3" )   //remaining colors
 	{//
            context.lineWidth='8';
@@ -436,25 +441,25 @@ function fontsa1(fpc){	//colors
 						varsizeup = "10";
 						context.save();
 	}
-    
+
  }
 
 function mousedowna1(pc){	//colors
-	
+
     if( pc == "rgb(0, 0, 0)" )   //remaining colors
-	{// 
+	{//
             varcolourwb="rgb(0, 0, 0)";
         context.strokeStyle = varcolourwb;
-       
+
 
 	divPreview.style.background = varcolourwb;
-   
+
 	}
         else if( pc == "rgb(255, 255, 255)" )   //remaining colors
 	{//
             varcolourwb="rgb(255, 255, 255)";
         context.strokeStyle = varcolourwb;
-       
+
 
 	divPreview.style.background = varcolourwb;
 	context.save();
@@ -532,7 +537,7 @@ function mousedowna1(pc){	//colors
         context.strokeStyle = varcolourwb;
 
 	divPreview.style.background = varcolourwb;
-	
+
 
 	}else if( pc == "rgb(255, 153, 68)" )   //remaining colors
 	{//
@@ -540,7 +545,7 @@ function mousedowna1(pc){	//colors
         context.strokeStyle = varcolourwb;
 
 	divPreview.style.background = varcolourwb;
-	}   
+	}
 }
 
 function bnwwb(){
@@ -556,7 +561,3 @@ function bnwwb(){
 	ctx2.putImageData(imgd, 0, 0);
 	saveas();
 }
-
-
-
-
