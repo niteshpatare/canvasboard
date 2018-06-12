@@ -320,7 +320,7 @@ this.onmouseup = function()
 							centerY = Math.max(type.y0,my) - Math.abs(type.y0 - my)/2;
 							vrad=((type.x0-centerX )+ (type.y0-centerY)); //to draw circle dn to up and right to left
 							context.beginPath();
-							if(vrad <1) break;
+							if(vrad <1) return;
 							context.arc(centerX, centerY, vrad ,0,Math.PI*2 ,true);
 							context.clearRect(0,0, 768,400);
 							context.stroke();
@@ -333,7 +333,7 @@ this.onmouseup = function()
 
 	         if (type.started && inhouse) {
 							type.started = false;
-							if(vrad <1) break;
+							if(vrad <1) return;
 							//alert(varsizeup);
 							addCirc(centerX, centerY, vrad, varcolourwb, varsizeup);
 							sendline(trep,utype);
