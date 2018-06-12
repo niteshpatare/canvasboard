@@ -372,7 +372,7 @@ function Obj(name) {
 }
 function syncTxt(){
 	var now = new Date();
-	document.getElementById('txtHint').value = 'Synced '+now; //utype
+	document.getElementById('txtHint').innerHTML = 'Synced '+now; //utype
 }
 function sendline(trep,utype) {
 
