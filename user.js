@@ -78,7 +78,7 @@ function e_canvas(e)
     if (e.layerX || e.layerX == 0) { // Firefox
 			e._x = e.layerX;
 			e._y = e.layerY;
-		} else if (ev.offsetX || e.offsetX == 0) { // Opera
+		} else if (e.offsetX || e.offsetX == 0) { // Opera
 			e._x = e.offsetX;
 			e._y = e.offsetY;
 		}
@@ -101,21 +101,6 @@ function e_canvas(e)
 			default: return;
 		}
 
-		if(mouseEv ==='mousedown' && touchInit ===1){
-			this.onmousedown = function(e)
-			{
-				setType(type,e);
-			};
-			touchInit = 1;
-		}
-		if(mouseEv ==='mousemove' && touchInit ===1){
-			setType(type,e);
-			touchInit = 1;
-		}
-		if(mouseEv ==='mouseup' && touchInit ===1){
-			setType(type,e);
-			touchInit = 0;
-		}
 }
 
 function setType(utype,e)
@@ -136,6 +121,23 @@ function setType(utype,e)
 	{
 
     type = pencil;
+
+		if(mouseEv ==='mousedown' && touchInit ===1){
+				penMouseDown(e);
+			touchInit = 1;
+			e.preventDefault();
+		}
+		if(mouseEv ==='mousemove' && touchInit ===1){
+			penMouseMove(e);
+			touchInit = 1;
+			e.preventDefault();
+		}
+		if(mouseEv ==='mouseup' && touchInit ===1){
+			penMouseUp(e);
+			touchInit = 0;
+			e.preventDefault();
+		}
+
 		this.onmousedown = function(e)
 		{
 			penMouseDown(e);
@@ -395,7 +397,7 @@ function sendline(trep,utype) {
 	{
 		if(xmlhttp.readyState == 4 && xmlhttp.status==200)
 		{
-			//document.getElementById('txtHint').value = utype;
+			document.getElementById('txtHint').value = 'Synced'; //utype
 		}
 	}
     xmlhttp.open("POST","post.php?id="+bid,true);
