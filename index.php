@@ -60,17 +60,17 @@ function toggleHouse(txt)
 }
 
 </script>
-<script src="//platform-api.sharethis.com/js/sharethis.js#property=5b1e6a27c05d470011577457&product=inline-share-buttons"></script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
+<script  type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5b1e6a27c05d470011577457&product=inline-share-buttons"></script>
+<script  type="text/javascript" async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script  type="text/javascript">
      (adsbygoogle = window.adsbygoogle || []).push({
           google_ad_client: "ca-pub-5670170403091187",
           enable_page_level_ads: true
      });
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-18289054-4"></script>
-<script>
+<script  type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=UA-18289054-4"></script>
+<script  type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -215,8 +215,8 @@ function toggleHouse(txt)
 
 
 	<!-- JavaScript Includes -->
-	<script src="draw.js"></script>
-	<script src="user.js"></script>
-	<script src="ret.js"></script>
+	<script  type="text/javascript" src="draw.js"></script>
+	<script  type="text/javascript" src="user.js"></script>
+	<script  type="text/javascript" src="ret.js"></script>
 </body>
 </html>
