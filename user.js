@@ -24,7 +24,7 @@ var stylePaddingLeft, stylePaddingTop, styleBorderLeft, styleBorderTop;
 		var pc18 = "rgb(0, 0, 255)";
 		var pc19 = "rgb(255, 0, 255)";
 		var pc20 = "rgb(255, 153, 68)";
-
+		var mouseEv, touchInit;
 var tpixarray =[];
 function tpixel(){
     this.x = 0;
@@ -92,7 +92,6 @@ function e_canvas(e)
 		{
 			setType(type,e);
 		}
-		var mouseEv, touchInit;
 		switch(e.type)
 		{
 			case "touchstart": { mouseEv="mousedown"; touchInit = 1; break;  }
