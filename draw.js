@@ -143,7 +143,7 @@ function mainDrawp(tempclr,tempft) {
 
             //working
              ctx2.beginPath();
-			ctx2.strokeStyle = pixels[j].c1;
+			// ctx2.strokeStyle = pixels[j].c1;
              //alert(pixels[j].c1)
 		for(var t = 0; t < pixels[j].length; t++)
                     {
@@ -156,7 +156,7 @@ function mainDrawp(tempclr,tempft) {
 
                         if(tn < pixels[j].length)
                             {	//ctx2.strokeStyle = retcolorp;
-
+							                  ctx2.strokeStyle = tempclr;
                                 ctx2.moveTo(pixels[j][t].x,pixels[j][t].y);
                                 ctx2.lineTo(pixels[j][tn].x,pixels[j][tn].y);
                                 ctx2.stroke();
