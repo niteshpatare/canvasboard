@@ -81,20 +81,20 @@ function e_canvas(e)
 		e._y = e.offsetY;
 		}
 
-			 mx = e._x - this.offsetLeft;
-			 my = e._y - this.offsetTop;
+		mx = e._x - this.offsetLeft;
+		my = e._y - this.offsetTop;
 
-			curtxt.value = "["+mx+","+my+"]";
-			var func = type;
-
-			 if(func)
-			 {
-				 setType(type);
-			 }
+		curtxt.value = "["+mx+","+my+"]";
+		var func = type;
+		if(func)
+		{
+			setType(type,e);
+		}
 }
 
-function setType(utype)
+function setType(utype,e)
 {
+
 	if( utype == "erase")
 	{
 
@@ -116,7 +116,27 @@ function setType(utype)
 	{
 
     type = pencil;
+		var mouseEv, touchInit;
+	  switch(e.type)
+	  {
+	    case "touchstart": { mouseEv="mousedown"; touchInit = 1; break;  }
+	    case "touchend":   { mouseEv="mouseup"; touchInit = 1; break;  }
+	    case "touchmove":  { mouseEv="mousemove"; touchInit = 1; break;  }
+	    default: return;
+	  }
 
+	if(mouseEv ==='mousedown' && touchInit ===1){
+		this.onmousedown();
+		touchInit = 1;
+	}
+	if(mouseEv ==='mousemove' && touchInit ===1){
+		this.onmousemove();
+		touchInit = 1;
+	}
+	if(mouseEv ==='mouseup' && touchInit ===1){
+		this.onmouseup();
+		touchInit = 0;
+	}
 this.onmousedown = function(e)
 {
 
