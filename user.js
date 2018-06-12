@@ -371,8 +371,8 @@ function Obj(name) {
     return document[name]||(document.all && document.all[name])||(document.getElementById && document.getElementById(name));
 }
 function syncTxt(){
-	var now = new Date();
-	document.getElementById('txtHint').innerHTML = 'Synced '+now; //utype
+			var now = new Date();
+			document.getElementById('txtHint').innerHTML = '<small>Synced at '+now.toLocaleTimeString()+'</small>'; //utype
 }
 function sendline(trep,utype) {
 
