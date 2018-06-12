@@ -301,84 +301,66 @@ this.onmouseup = function()
 
 	}
     if( utype == "circle")
-	{
-          type = circle;
-		var centerX,centerY,vrad;
-this.onmousedown = function(e)
-{
-    if(inhouse)
-        {
-		type.started = true;
-    type.x0 = mx;
-	type.y0 = my;
+		{
+	    type = circle;
+			var centerX,centerY,vrad;
+			this.onmousedown = function(e)
+			{
+			    if(inhouse) {
+						type.started = true;
+				    type.x0 = mx;
+						type.y0 = my;
+					}
+			};
+			this.onmousemove = function(e)
+			{
+					if (type.started && inhouse) {
 
+							centerX = Math.max(type.x0,mx) - Math.abs(type.x0 - mx)/2;
+							centerY = Math.max(type.y0,my) - Math.abs(type.y0 - my)/2;
+							vrad=((type.x0-centerX )+ (type.y0-centerY)); //to draw circle dn to up and right to left
+							context.beginPath();
+							if(vrad <1) break;
+							context.arc(centerX, centerY, vrad ,0,Math.PI*2 ,true);
+							context.clearRect(0,0, 768,400);
+							context.stroke();
+							trep = centerX+"-"+centerY+"-"+vrad+"-"+varcolourwb+"-"+varsizeup;
 
-
-	}
-
-};
-this.onmousemove = function(e)
-{
-                       if (type.started && inhouse) {
-
-						 centerX = Math.max(type.x0,mx) - Math.abs(type.x0 - mx)/2;
-   						 centerY = Math.max(type.y0,my) - Math.abs(type.y0 - my)/2;
-   						 vrad=((type.x0-centerX )+ (type.y0-centerY)); //to draw circle dn to up and right to left
-   						context.beginPath();
-                    	   	context.arc(centerX, centerY, vrad ,0,Math.PI*2 ,true);
-                     		context.clearRect(0,0, 768,400);
-                             context.stroke();
-
-                           trep = centerX+"-"+centerY+"-"+vrad+"-"+varcolourwb+"-"+varsizeup;
-
-                     	}
-};
-this.onmouseup = function(e)
-{
-                       if (type.started && inhouse) {
-
-
+					}
+			};
+			this.onmouseup = function(e)
+			{
+	         if (type.started && inhouse) {
 							type.started = false;
 							//alert(varsizeup);
-                             addCirc(centerX, centerY, vrad, varcolourwb, varsizeup);
-                             sendline(trep,utype);
-
+							addCirc(centerX, centerY, vrad, varcolourwb, varsizeup);
+							sendline(trep,utype);
 						}
-			}
-
-	}
-    if( utype == "textt")
-	{
-		type = textt;
-
-this.onmousedown = function(e)
-	{
-    if(inhouse)
-        {
-		type.x0 = mx;
-		type.y0 = my;
-		varsizeup = context.lineWidth+25;
-		context.textBaseline = "alphabetic";
-		context.font = (varsizeup) + "pt Calibri";
-
-        context.fillStyle = varcolourwb;
-		//if inside the x,y coordinates
-        var txtreply = prompt("Enter text: ","Hi");
-       	context.fillText(txtreply, type.x0,type.y0);
-
-		trep = type.x0+"-"+type.y0+"-"+varcolourwb+"-"+txtreply+"-"+varsizeup;
-		//varcolourwb = varcolourwb+"-"+txtreply;
-		addtext(type.x0,type.y0,varcolourwb,txtreply,varsizeup);
-
-		sendline(trep,utype);
-	//alert("h");
-
+				}
 		}
-	};
-
-
-
-
+    if( utype == "textt")
+		{
+				type = textt;
+				this.onmousedown = function(e)
+				{
+				    if(inhouse)
+				    {
+								type.x0 = mx;
+								type.y0 = my;
+								varsizeup = context.lineWidth+25;
+								context.textBaseline = "alphabetic";
+								context.font = (varsizeup) + "pt Calibri";
+								context.fillStyle = varcolourwb;
+								//if inside the x,y coordinates
+								var txtreply = prompt("Enter text: ","Hi");
+								context.fillText(txtreply, type.x0,type.y0);
+								trep = type.x0+"-"+type.y0+"-"+varcolourwb+"-"+txtreply+"-"+varsizeup;
+								//varcolourwb = varcolourwb+"-"+txtreply;
+								addtext(type.x0,type.y0,varcolourwb,txtreply,varsizeup);
+								sendline(trep,utype);
+								//alert("h");
+						}
+				};
 	}
 
 }
