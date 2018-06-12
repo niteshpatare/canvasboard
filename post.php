@@ -1,5 +1,5 @@
 <?php
-echo "hello";
+// echo "hello";
 $type = $_POST['umsgtype'];
 $uvar = $_POST['umsg'];
 $uclr = $_POST['umsgclr'];
@@ -33,12 +33,12 @@ foreach($coord as $value)
     $txtx = $xdoc ->createTextNode ($point[1]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele); //append to root
-    
+
 	$xele = $xdoc ->createElement('w');
     $txtx = $xdoc ->createTextNode ($point[2]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele); //append to root
-	
+
 	$xele = $xdoc ->createElement('h');
     $txtx = $xdoc ->createTextNode ($point[3]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
@@ -48,13 +48,13 @@ foreach($coord as $value)
     $txtx = $xdoc ->createTextNode ($point[4]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele); //append to root
-	
+
 	$xele = $xdoc ->createElement('ft');
     $txtx = $xdoc ->createTextNode ($point[5]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele); //append to root
-	
-	
+
+
 	}
 //rectangle
 }
@@ -76,7 +76,7 @@ foreach($coord as $value)
     $txtx = $xdoc ->createTextNode ($point[1]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele); //append to root
-    
+
 	$xele = $xdoc ->createElement('r');
     $txtx = $xdoc ->createTextNode ($point[2]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
@@ -86,13 +86,13 @@ foreach($coord as $value)
     $txtx = $xdoc ->createTextNode ($point[3]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele); //append to root
-	
+
 	$xele = $xdoc ->createElement('ft');
     $txtx = $xdoc ->createTextNode ($point[4]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele); //append to root
-	
-	
+
+
 	}
 //circle
 }
@@ -113,12 +113,12 @@ foreach($coord as $value)
     $txtx = $xdoc ->createTextNode ($point[1]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele); //append to root
-    
+
 		$xele = $xdoc ->createElement('c');
     $txtx = $xdoc ->createTextNode ($point[2]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele);
-	
+
 	$xele = $xdoc ->createElement('td');
     $txtx = $xdoc ->createTextNode ($point[3]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
@@ -128,14 +128,14 @@ foreach($coord as $value)
     $txtx = $xdoc ->createTextNode ($point[4]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele);
-	
+
 	}
 //text
 }
 elseif($type=="line")
 {//line
 
-	
+
 	$newElement = $xdoc ->createElement($type);
 
 
@@ -152,12 +152,12 @@ foreach($coord as $value)
     $txtx = $xdoc ->createTextNode ($point[1]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele); //append to root
-    
+
 	$xele = $xdoc ->createElement('x2');
     $txtx = $xdoc ->createTextNode ($point[2]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele); //append to root
-	
+
 	$xele = $xdoc ->createElement('y2');
     $txtx = $xdoc ->createTextNode ($point[3]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
@@ -167,14 +167,14 @@ foreach($coord as $value)
     $txtx = $xdoc ->createTextNode ($point[4]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele); //append to root
-	
+
 	$xele = $xdoc ->createElement('ft');
     $txtx = $xdoc ->createTextNode ($point[5]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele); //append to root
-	
+
 	}
-		
+
 //line
 }
 else
@@ -185,7 +185,7 @@ $newElement = $xdoc ->createElement($type);
 
 foreach($coord2 as $value)
     {
-	
+
     $pointx = explode("-",$value);
 
     $xele = $xdoc ->createElement('x');
@@ -197,8 +197,8 @@ foreach($coord2 as $value)
     $txtx = $xdoc ->createTextNode ($pointx[1]); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele); //append to root
-    
-	
+
+
 }
 
 
@@ -206,7 +206,7 @@ foreach($coord2 as $value)
     $txtx = $xdoc ->createTextNode ($uclr); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
     $newElement -> appendChild($xele); //append to root
-	
+
 	$xele = $xdoc ->createElement('ft');
     $txtx = $xdoc ->createTextNode ($uft); // creates textnode
     $xele -> appendChild($txtx); //append to xnode - textnode
