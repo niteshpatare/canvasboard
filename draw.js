@@ -156,9 +156,11 @@ function mainDrawp(tempclr,tempft) {
 
                         if(tn < pixels[j].length)
                             {	//ctx2.strokeStyle = retcolorp;
-							                  ctx2.strokeStyle = tempclr;
+
                                 ctx2.moveTo(pixels[j][t].x,pixels[j][t].y);
                                 ctx2.lineTo(pixels[j][tn].x,pixels[j][tn].y);
+                                ctx2.strokeStyle = pixels[j][tn].c;
+                                ctx2.lineWidth = pixels[j][tn].f;
                                 ctx2.stroke();
 
                             }

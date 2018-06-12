@@ -60,6 +60,8 @@ function getDraw()
                 tpx = new tpixel();
                 tpx.x = x[j].firstChild.nodeValue;
                 tpx.y = y[j].firstChild.nodeValue;
+                tpx.c = retcolorp[0].firstChild.nodeValue;
+                tpx.f = retft[0].firstChild.nodeValue;
               //tpx.c1 = ct[j].firstChild.nodeValue;
                 ////alert(tpx.x+"-"+tpx.y);
                 pen_arr.push(tpx);
@@ -67,8 +69,8 @@ function getDraw()
             }
             addpencil(pen_arr);
             pen_arr = [];
-            var tempclr =retcolorp[0].firstChild.nodeValue;
-            var tempft =retft[0].firstChild.nodeValue;
+// var tempclr =retcolorp[0].firstChild.nodeValue;
+// var tempft =retft[0].firstChild.nodeValue;
             //alert(tempclr);
             //ctx2.strokeStyle = retcolorp[0].firstChild.nodeValue;
             //	ctx2.strokeStyle = tempclr;
