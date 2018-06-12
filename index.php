@@ -147,7 +147,7 @@ function toggleHouse(txt)
     <ul>
     	<table class='tblPalettenew' width="750">
 				<tr>
-					<span>Choose color for canvas element</span>
+					<td><span>Choose color for canvas element</span></td>
 				<tr>
 				<tr>
 					<td style="background-color: rgb(0, 0, 0);" onClick=mousedowna1(pc1);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
