@@ -198,5 +198,15 @@ function toggleHouse(txt)
 <script src="draw.js"></script>
 <script src="user.js"></script>
 <script src="ret.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-18289054-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-18289054-4');
+</script>
+
 </body>
 </html>
