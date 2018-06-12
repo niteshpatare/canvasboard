@@ -205,6 +205,7 @@ function getDraw()
       if(this.status == 200 && this.responseXML != null ) {
         // success!
         processData(this);
+        syncTxt();
       } else {
         // something went wrong
         console.log('Data not fetched');
