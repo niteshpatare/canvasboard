@@ -1,5 +1,5 @@
 html {
-    font-size: 14px;
+    font-size: 14 px;
     text-rendering: optimizeLegibility;
 }
 body {
@@ -35,7 +35,9 @@ nav{
 
 
 }
-
+ hr{
+  margin: 10px 0;
+ }
 nav ul li{
 
     display:inline;

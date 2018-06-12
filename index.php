@@ -75,6 +75,7 @@ function toggleHouse(txt)
   </div>
 
 <section id="page">
+	 <small><a href='/' target="_blank">Create new Canvas</a></small><hr>
 	 <header> <!-- Defining the header section of the page with the appropriate tag -->
 
  <nav class="clear"> <!-- The nav link semantically marks your main site navigation -->
@@ -181,7 +182,7 @@ function toggleHouse(txt)
 		<div style="text-align:center">
 			Shart sharing and drawing/collaborating on same canvas between teams/friends/gorups.
 		</div>
-		<hr style="margin: 10px 0;">
+		<hr>
 	<div class="sharethis-inline-share-buttons"></div>
 	</div>
 
