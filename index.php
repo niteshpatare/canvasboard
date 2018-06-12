@@ -50,6 +50,10 @@ $uvar=$_POST['msgval'];
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
 <link rel="stylesheet" type="text/css" href="styles.css" />
+<!-- JavaScript Includes -->
+<script src="draw.js"></script>
+<script src="user.js"></script>
+<script src="ret.js"></script>
 <script type="text/javascript">
     var bid = "<?php echo $gid; ?>";
 
@@ -60,6 +64,13 @@ function toggleHouse(txt)
 
 </script>
 <script src="//platform-api.sharethis.com/js/sharethis.js#property=5b1e6a27c05d470011577457&product=inline-share-buttons"></script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-5670170403091187",
+          enable_page_level_ads: true
+     });
+</script>
 </head>
 <body onLoad="init2();">
 
@@ -194,10 +205,7 @@ function toggleHouse(txt)
 
 		<small>Site by pnuts27. Follow- <a href='https://twitter.com/knytesh' target="_blank">knytesh</a></small>
 	</footer>  </section>
-    <!-- JavaScript Includes -->
-<script src="draw.js"></script>
-<script src="user.js"></script>
-<script src="ret.js"></script>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18289054-4"></script>
 <script>
