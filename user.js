@@ -330,8 +330,10 @@ this.onmouseup = function()
 			};
 			this.onmouseup = function(e)
 			{
+
 	         if (type.started && inhouse) {
 							type.started = false;
+							if(vrad <1) break;
 							//alert(varsizeup);
 							addCirc(centerX, centerY, vrad, varcolourwb, varsizeup);
 							sendline(trep,utype);
