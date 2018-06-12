@@ -68,10 +68,16 @@ function toggleHouse(txt)
           enable_page_level_ads: true
      });
 </script>
-<!-- JavaScript Includes -->
-<script src="draw.js"></script>
-<script src="user.js"></script>
-<script src="ret.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-18289054-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-18289054-4');
+</script>
+
 </head>
 <body onLoad="init2();">
 
@@ -207,15 +213,10 @@ function toggleHouse(txt)
 		<small>Site by pnuts27. Follow- <a href='https://twitter.com/knytesh' target="_blank">knytesh</a></small>
 	</footer>  </section>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-18289054-4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-18289054-4');
-</script>
-
+	<!-- JavaScript Includes -->
+	<script src="draw.js"></script>
+	<script src="user.js"></script>
+	<script src="ret.js"></script>
 </body>
 </html>
