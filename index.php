@@ -145,28 +145,28 @@ function toggleHouse(txt)
 			</table>
     </ul>
     <ul>
-    	<table class='tblPalettenew' width="750">
-				<tr>
-					<td><span>Choose color for canvas element</span></td>
-				<tr>
-				<tr>
-					<td style="background-color: rgb(0, 0, 0);" onClick=mousedowna1(pc1);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="background-color: rgb(255, 255, 255);" onClick=mousedowna1(pc2);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="background-color: rgb(153, 153, 153);" onClick=mousedowna1(pc4);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="background-color: rgb(0, 153, 0);" onClick=mousedowna1(pc5);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="background-color: rgb(0, 153, 255);" onClick=mousedowna1(pc10);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="background-color: rgb(153, 0, 255);" onClick=mousedowna1(pc12);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="background-color: rgb(153, 68, 0);" onClick=mousedowna1(pc13);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="background-color: rgb(255, 0, 0);" onClick=mousedowna1(pc14);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="background-color: rgb(255, 255, 0);" onClick=mousedowna1(pc15);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="background-color: rgb(0, 255, 0);" onClick=mousedowna1(pc16);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="background-color: rgb(0, 255, 255);" onClick=mousedowna1(pc17);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="background-color: rgb(0, 0, 255);" onClick=mousedowna1(pc18);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="background-color: rgb(255, 0, 255);" onClick=mousedowna1(pc19);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="background-color: rgb(255, 153, 68);" onClick=mousedowna1(pc20);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				<tr>
-			</table>
-  </ul>
+			<li>
+				<span>Choose color for canvas element</span>
+	    	<table class='tblPalettenew' width="750">
+					<tr>
+						<td style="background-color: rgb(0, 0, 0);" onClick=mousedowna1(pc1);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td style="background-color: rgb(255, 255, 255);" onClick=mousedowna1(pc2);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td style="background-color: rgb(153, 153, 153);" onClick=mousedowna1(pc4);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td style="background-color: rgb(0, 153, 0);" onClick=mousedowna1(pc5);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td style="background-color: rgb(0, 153, 255);" onClick=mousedowna1(pc10);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td style="background-color: rgb(153, 0, 255);" onClick=mousedowna1(pc12);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td style="background-color: rgb(153, 68, 0);" onClick=mousedowna1(pc13);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td style="background-color: rgb(255, 0, 0);" onClick=mousedowna1(pc14);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td style="background-color: rgb(255, 255, 0);" onClick=mousedowna1(pc15);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td style="background-color: rgb(0, 255, 0);" onClick=mousedowna1(pc16);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td style="background-color: rgb(0, 255, 255);" onClick=mousedowna1(pc17);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td style="background-color: rgb(0, 0, 255);" onClick=mousedowna1(pc18);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td style="background-color: rgb(255, 0, 255);" onClick=mousedowna1(pc19);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td style="background-color: rgb(255, 153, 68);" onClick=mousedowna1(pc20);>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<tr>
+				</table>
+			</li>
+	  </ul>
 </nav>
 
         </header>
