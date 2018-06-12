@@ -50,10 +50,7 @@ $uvar=$_POST['msgval'];
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
 <link rel="stylesheet" type="text/css" href="styles.css" />
-<!-- JavaScript Includes -->
-<script src="draw.js"></script>
-<script src="user.js"></script>
-<script src="ret.js"></script>
+
 <script type="text/javascript">
     var bid = "<?php echo $gid; ?>";
 
@@ -71,6 +68,10 @@ function toggleHouse(txt)
           enable_page_level_ads: true
      });
 </script>
+<!-- JavaScript Includes -->
+<script src="draw.js"></script>
+<script src="user.js"></script>
+<script src="ret.js"></script>
 </head>
 <body onLoad="init2();">
 
