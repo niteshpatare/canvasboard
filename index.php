@@ -1,5 +1,5 @@
 <?php
-$encrypt_key = "GJHsahakst1468464a";
+$encrypt_key = "GJHsahakst1462574a";
 
 $gid = $_GET['id'];
 			if($gid=="")
