@@ -364,7 +364,7 @@ this.onmousedown = function(e)
 
         context.fillStyle = varcolourwb;
 		//if inside the x,y coordinates
-        var txtreply = prompt("Enter text: ","Hello World!");
+        var txtreply = prompt("Enter text: ","Hi");
        	context.fillText(txtreply, type.x0,type.y0);
 
 		trep = type.x0+"-"+type.y0+"-"+varcolourwb+"-"+txtreply+"-"+varsizeup;
@@ -387,7 +387,10 @@ this.onmousedown = function(e)
 function Obj(name) {
     return document[name]||(document.all && document.all[name])||(document.getElementById && document.getElementById(name));
 }
-
+function syncTxt(){
+	var now = new Date();
+	document.getElementById('txtHint').value = 'Synced '+now; //utype
+}
 function sendline(trep,utype) {
 
 
@@ -397,7 +400,8 @@ function sendline(trep,utype) {
 	{
 		if(xmlhttp.readyState == 4 && xmlhttp.status==200)
 		{
-			document.getElementById('txtHint').value = 'Synced'; //utype
+			syncTxt();
+			//document.getElementById('txtHint').value = utype
 		}
 	}
     xmlhttp.open("POST","post.php?id="+bid,true);
@@ -417,6 +421,7 @@ function sendlinep(trep,utype,varcolourwb,varsizeup) {
 		if(xmlhttp.readyState == 4 && xmlhttp.status==200)
 		{
 			//document.getElementById('txtHint').value = utype;
+			syncTxt();
 		}
 	}
     xmlhttp.open("POST","post.php?id="+bid,true);
