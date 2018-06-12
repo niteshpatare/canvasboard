@@ -180,7 +180,7 @@ function toggleHouse(txt)
 	<canvas id="canvas2" onmouseover="toggleHouse(true);" onmouseout="toggleHouse(false);" linecap="Butt" width="768" height="400"></canvas>
     <canvas id="c2" linecap="Butt" width="768" height="400" position=absolute style="border: 1px solid #000;left: 0;top: 0;z-index: 1;"></canvas>
 		<div style="text-align:center">
-			Shart sharing and drawing/collaborating on same canvas between teams/friends/gorups.
+			Shart sharing and drawing/collaborating on same canvas between teams/friends/groups.
 		</div>
 		<hr>
 	<div class="sharethis-inline-share-buttons"></div>
