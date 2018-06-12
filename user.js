@@ -75,12 +75,12 @@ function init2() {
 
 function e_canvas(e)
 {
-            if (e.layerX || e.layerX == 0) { // Firefox
-		e._x = e.layerX;
-		e._y = e.layerY;
+    if (e.layerX || e.layerX == 0) { // Firefox
+			e._x = e.layerX;
+			e._y = e.layerY;
 		} else if (ev.offsetX || e.offsetX == 0) { // Opera
-		e._x = e.offsetX;
-		e._y = e.offsetY;
+			e._x = e.offsetX;
+			e._y = e.offsetY;
 		}
 
 		mx = e._x - this.offsetLeft;
@@ -92,6 +92,30 @@ function e_canvas(e)
 		{
 			setType(type,e);
 		}
+		var mouseEv, touchInit;
+		switch(e.type)
+		{
+			case "touchstart": { mouseEv="mousedown"; touchInit = 1; break;  }
+			case "touchend":   { mouseEv="mouseup"; touchInit = 1; break;  }
+			case "touchmove":  { mouseEv="mousemove"; touchInit = 1; break;  }
+			default: return;
+		}
+
+		if(mouseEv ==='mousedown' && touchInit ===1){
+			this.onmousedown = function(e)
+			{
+				setType(type,e);
+			};
+			touchInit = 1;
+		}
+		if(mouseEv ==='mousemove' && touchInit ===1){
+			setType(type,e);
+			touchInit = 1;
+		}
+		if(mouseEv ==='mouseup' && touchInit ===1){
+			setType(type,e);
+			touchInit = 0;
+		}
 }
 
 function setType(utype,e)
@@ -99,18 +123,12 @@ function setType(utype,e)
 
 	if( utype == "erase")
 	{
-
     type = erase;
-
-
-        //context.strokeStyle = "rgba(255, 255, 255, 255)";
-
-	context.globalCompositeOperation = "copy";
-	context.strokeStyle = ("rgba(255,255,255,255)");
-  // context.fillStyle = "rgba(0,0,0,0)";
-  divPreview.style.background = rgba(255, 255, 255, 255);
-
-
+    //context.strokeStyle = "rgba(255, 255, 255, 255)";
+		context.globalCompositeOperation = "copy";
+		context.strokeStyle = ("rgba(255,255,255,255)");
+	  // context.fillStyle = "rgba(0,0,0,0)";
+	  divPreview.style.background = rgba(255, 255, 255, 255);
 	}
 
 
@@ -118,94 +136,67 @@ function setType(utype,e)
 	{
 
     type = pencil;
-		var mouseEv, touchInit;
-	  switch(e.type)
-	  {
-	    case "touchstart": { mouseEv="mousedown"; touchInit = 1; break;  }
-	    case "touchend":   { mouseEv="mouseup"; touchInit = 1; break;  }
-	    case "touchmove":  { mouseEv="mousemove"; touchInit = 1; break;  }
-	    default: return;
-	  }
+		this.onmousedown = function(e)
+		{
+			penMouseDown(e);
+		};
+		function penMouseDown(e){
+			if(inhouse)
+			{
+				context.beginPath();
+				context.moveTo(mx, my);
+				type.x1 = mx;
+				type.y1 = my;
+				type.started = true;
+				trep = type.x1+"-"+type.y1;
+				var freed = new tpixel();
+				freed.x = type.x1;
+				freed.y = type.y1;
+				tpixarray.push(freed);
+			}
+		}
+		this.onmousemove = function(e)
+		{
+		   penMouseMove(e);
+		};
+		function penMouseMove(e){
+			if (type.started && inhouse) {
+				type.x2 = mx;
+				type.y2 = my;
+			 context.lineTo(mx, my);
+			 trep = trep + ","+type.x2+"-"+type.y2;
+			 //sendline(this.x1,this.y1,this.x2,this.y2);
+			 context.stroke();
+			 var freed = new tpixel();
+			 freed.x = type.x2;
+			 freed.y = type.y2;
+			 tpixarray.push(freed);
+			 }
+		}
+		this.onmouseup = function(e)
+		{
+			penMouseUp(e);
 
-	if(mouseEv ==='mousedown' && touchInit ===1){
-		this.onmousedown();
-		touchInit = 1;
-	}
-	if(mouseEv ==='mousemove' && touchInit ===1){
-		this.onmousemove();
-		touchInit = 1;
-	}
-	if(mouseEv ==='mouseup' && touchInit ===1){
-		this.onmouseup();
-		touchInit = 0;
-	}
-this.onmousedown = function(e)
-{
+		};
+		function penMouseUp(e){
+			if (type.started && inhouse) {
 
+				this.onmousemove(e);
+				//var creed = new tcolor();
+				//creed.c1 = varcolourwb;
+				//tpixarray.push(creed);
 
+				// trep = trep + "&"+varcolourwb;
+				sendlinep(trep,utype,varcolourwb,varsizeup);
 
-    if(inhouse)
-        {
+				addpencil(tpixarray);
+				// addpencil(creed);
+				//alert(varcolourwb);
+				tpixarray = [];
 
-	context.beginPath();
-	context.moveTo(mx, my);
-
-    type.x1 = mx;
-	type.y1 = my;
-
-	type.started = true;
-        trep = type.x1+"-"+type.y1;
-        var freed = new tpixel();
-        freed.x = type.x1;
-        freed.y = type.y1;
-        tpixarray.push(freed);
-
-	}
-
-};
-
-this.onmousemove = function(e)
-{
-                       if (type.started && inhouse) {
-
-						type.x2 = mx;
-	                       type.y2 = my;
-
-                            context.lineTo(mx, my);
-
-                           trep = trep + ","+type.x2+"-"+type.y2;
-                                          //sendline(this.x1,this.y1,this.x2,this.y2);
-
-
-                            context.stroke();
-                            var freed = new tpixel();
-        freed.x = type.x2;
-        freed.y = type.y2;
-        tpixarray.push(freed);
-
-                     	}
-};
-this.onmouseup = function(e)
-{
-                       if (type.started && inhouse) {
-
-                    	   this.onmousemove(e);
-							//var creed = new tcolor();
-							//creed.c1 = varcolourwb;
-							//tpixarray.push(creed);
-
-                         // trep = trep + "&"+varcolourwb;
-                           sendlinep(trep,utype,varcolourwb,varsizeup);
-
-                           addpencil(tpixarray);
-						   // addpencil(creed);
-							//alert(varcolourwb);
-                           tpixarray = [];
-
-                        }
-                           type.started = false;
-
-};
+			}
+			type.started = false;
+		}
 	}
 	if( utype == "line")
 	{
