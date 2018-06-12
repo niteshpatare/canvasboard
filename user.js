@@ -62,11 +62,13 @@ function init2() {
   canvas.onmousedown = e_canvas;
   canvas.onmouseup = e_canvas;
   canvas.onmousemove = e_canvas;
-	canvas.touchstart = e_canvas;
-	canvas.touchmove = e_canvas;
-	canvas.touchcancel = e_canvas;
-	canvas.touchend = e_canvas;
-
+	canvas.ontouchstart = e_canvas;
+	canvas.ontouchmove = e_canvas;
+	canvas.ontouchcancel = e_canvas;
+	canvas.ontouchend = e_canvas;
+	canvas.addEventListener("touchstart", e_canvas, false);
+	canvas.addEventListener("touchmove", e_canvas, false);
+	canvas.addEventListener("touchend", e_canvas, false);
 
 }
 //
