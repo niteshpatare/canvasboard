@@ -79,70 +79,72 @@ function toggleHouse(txt)
 
  <nav class="clear"> <!-- The nav link semantically marks your main site navigation -->
     <ul>
-			<table class='tblPalette' width="760">
-				<tr>
-					<td>
-						<div>Active color</div>
-						<div name="divPreview" id="divPreview" style="height:20px;width:32px;border:1px #000000 solid;"></div>
-					</td>
-						<td style="border:1px">
-							<div>(X,Y)</div>
-							<form name="frmColour">
-								<input readonly type="text" id="ColorHex" name="ColorHex" size="10" style="height:24px;width:56px;font-size:12px;background: transparent;align=middle;">
-							</form>
+			<li>
+				<table class='tblPalette' width="760">
+					<tr>
+						<td>
+							<div>Active color</div>
+							<div name="divPreview" id="divPreview" style="height:20px;width:32px;border:1px #000000 solid;"></div>
 						</td>
-	        <td>
-						<div>Pencil</div>
-						<img id="dtool" src="img/pen.png" name="pencil" value="pencil" onClick="setType('pencil');"/>
-					</td>
-	        <td>
-						<div>Line</div>
-						<img id="dtool" src="img/annLine.png" name="line" value="line" onClick="setType('line');"/>
-					</td>
-	        <td>
-						<div>Rectangle</div>
-						<img id="dtool" src="img/annRect.png" name="rect" value="rect" onClick="setType('rect');"/>
-					</td>
-	        <td>
-						<div>Circle</div>
-						<img id="dtool" src="img/circle.png" name="circle" value="circle" onClick="setType('circle');"/>
-					</td>
-	        <td>
-						<div>Text</div>
-						<img id="dtool" src="img/annTextEdit.png" name="textt" value="textt" onClick="setType('textt');"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div>Stroke size 1</div>
-						<img id="dtool" src="img/n1.png" name="one" value="one" onClick="fontsa1(1);"/>
-					</td>
-					<td>
-						<div>Stroke size 2</div>
-						<img id="dtool" src="img/n2.png" name="two" value="two" onClick="fontsa1(2);"/>
-					</td>
-					<td>
-						<div>Stroke size 3</div>
-						<img id="dtool" src="img/n3.png" name="three" value="three" onClick="fontsa1(3);"/>
-					</td>
-					<td>
-						<div>Stroke size 4</div>
-						<img id="dtool" src="img/n4.png" name="four" value="four" onClick="fontsa1(4);"/>
-					</td>
-					<td>
-						<div>Erase</div>
-						<img id="dtool" src="img/eraser.png" name="eraser" value="erase" onClick="setType('erase');"/>
-					</td>
-					<td>
-						<div>Black and White</div>
-						<img id="dtool" src="img/bw.png" name="bw" value="bw" onClick="bnwwb();"/>
-					</td>
-					<td>
-						<div>Save as Image</div>
-						<img id="dtool" src="img/saves.png" name="save" value="save" onClick="saveas();"/>
-					</td>
-				</tr>
-			</table>
+							<td style="border:1px">
+								<div>(X,Y)</div>
+								<form name="frmColour">
+									<input readonly type="text" id="ColorHex" name="ColorHex" size="10" style="height:24px;width:56px;font-size:12px;background: transparent;align=middle;">
+								</form>
+							</td>
+		        <td>
+							<div>Pencil</div>
+							<img id="dtool" src="img/pen.png" name="pencil" value="pencil" onClick="setType('pencil');"/>
+						</td>
+		        <td>
+							<div>Line</div>
+							<img id="dtool" src="img/annLine.png" name="line" value="line" onClick="setType('line');"/>
+						</td>
+		        <td>
+							<div>Rectangle</div>
+							<img id="dtool" src="img/annRect.png" name="rect" value="rect" onClick="setType('rect');"/>
+						</td>
+		        <td>
+							<div>Circle</div>
+							<img id="dtool" src="img/circle.png" name="circle" value="circle" onClick="setType('circle');"/>
+						</td>
+		        <td>
+							<div>Text</div>
+							<img id="dtool" src="img/annTextEdit.png" name="textt" value="textt" onClick="setType('textt');"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>Stroke size 1</div>
+							<img id="dtool" src="img/n1.png" name="one" value="one" onClick="fontsa1(1);"/>
+						</td>
+						<td>
+							<div>Stroke size 2</div>
+							<img id="dtool" src="img/n2.png" name="two" value="two" onClick="fontsa1(2);"/>
+						</td>
+						<td>
+							<div>Stroke size 3</div>
+							<img id="dtool" src="img/n3.png" name="three" value="three" onClick="fontsa1(3);"/>
+						</td>
+						<td>
+							<div>Stroke size 4</div>
+							<img id="dtool" src="img/n4.png" name="four" value="four" onClick="fontsa1(4);"/>
+						</td>
+						<td>
+							<div>Erase</div>
+							<img id="dtool" src="img/eraser.png" name="eraser" value="erase" onClick="setType('erase');"/>
+						</td>
+						<td>
+							<div>Black and White</div>
+							<img id="dtool" src="img/bw.png" name="bw" value="bw" onClick="bnwwb();"/>
+						</td>
+						<td>
+							<div>Save as Image</div>
+							<img id="dtool" src="img/saves.png" name="save" value="save" onClick="saveas();"/>
+						</td>
+					</tr>
+				</table>
+			</li>
     </ul>
     <ul>
 			<li>
