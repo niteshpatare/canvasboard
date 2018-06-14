@@ -40,6 +40,9 @@ function getDraw()
         var ret_cir = xmlhttp.responseXML.documentElement.getElementsByTagName("circle");
         var ret_tex = xmlhttp.responseXML.documentElement.getElementsByTagName("textt");
 
+        if( ret_pen.length === 0 && ret_pen.length === 0 && ret_pen.length === 0 && ret_pen.length === 0 && ret_pen.length === 0){
+          return;
+        }
         var x,y,p,q,ct,ft;
         var mydata = {
           ret_pen: ret_pen[0],
