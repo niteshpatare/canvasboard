@@ -48,31 +48,40 @@ function getDraw()
           ret_cir: ret_cir,
           ret_tex: ret_tex
         };
-        function setCache(ret_pen){
+        function setCache(mydata){
                     var cacheSet = {
                         data: mydata,
                         expires: new Date().getTime()
-                    }
+                    };
                     sessionStorage.setItem("cache", JSON.stringify(cacheSet));
 
           }
-          setCache(ret_pen);
+          setCache(mydata);
           function getCache(){
                     var cacheRetrieve = JSON.parse( sessionStorage.getItem("cache") );
-                    if ( cacheRetrieve.expires < new Date().getTime() && cacheRetrieve.data !== JSON.parse({data:mydata}) ) {
+                    var dataNew = {
+                        data: mydata,
+                    };
+                    dataNew = JSON.stringify(dataNew);
+                    dataNew = JSON.parse(dataNew);
+                    if ( cacheRetrieve.expires < new Date().getTime() && cacheRetrieve.data !== dataNew.data ) {
+                        JSON.parse({data:mydata})
                         // get a fresh copy
-                        setCache(ret_pen);
+                        setCache(mydata);
+                        setValue(dataNew);
                     } else {
-                        mydata = cacheRetrieve.data;
-                        ret_pen = cacheRetrieve.data.ret_pen;
-                        ret_lin: cacheRetrieve.data.ret_lin;
-                        ret_rec: cacheRetrieve.data.ret_rec;
-                        ret_cir: cacheRetrieve.data.ret_cir;
-                        ret_tex: cacheRetrieve.data.ret_tex;
+                      setValue(cacheRetrieve);
                     }
           }
           getCache();
-
+          function setValue(value){
+            var tempmydata = value.data;
+            ret_pen = tempmydata.ret_pen;
+            ret_lin: tempmydata.ret_lin;
+            ret_rec: tempmydata.ret_rec;
+            ret_cir: tempmydata.ret_cir;
+            ret_tex: tempmydata.ret_tex;
+          }
         //alert(retcolorp[0].firstChild.nodeValue);
         for(i=0;i<ret_pen.length;i++)
         {
