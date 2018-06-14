@@ -41,10 +41,14 @@ function getDraw()
         var ret_tex = xmlhttp.responseXML.documentElement.getElementsByTagName("textt");
 
         var x,y,p,q,ct,ft;
-
+        var mydata = {
+          ret_pen: ret_pen,
+          ret_lin: ret_lin,
+          ret_rec: ret_rec,
+          ret_cir: ret_cir,
+          ret_tex: ret_tex
+        };
         function setCache(ret_pen){
-
-                    var mydata = { ret_pen_xml: ret_pen };
                     var cacheSet = {
                         data: mydata,
                         expires: new Date().getTime()
@@ -55,14 +59,17 @@ function getDraw()
           setCache(ret_pen);
           function getCache(){
                     var cacheRetrieve = JSON.parse( sessionStorage.getItem("cache") );
-                    if ( cacheRetrieve.expires < new Date().getTime() ) {
+                    if ( cacheRetrieve.expires < new Date().getTime() && cacheRetrieve.data !== mydata) {
                         // get a fresh copy
                         setCache(ret_pen);
                     } else {
                         mydata = cacheRetrieve.data;
-                        ret_pen = cacheRetrieve.data.ret_pen_xml;
+                        ret_pen = cacheRetrieve.data.ret_pen;
+                        ret_lin: cacheRetrieve.data.ret_lin;
+                        ret_rec: cacheRetrieve.data.ret_rec;
+                        ret_cir: cacheRetrieve.data.ret_cir;
+                        ret_tex: cacheRetrieve.data.ret_tex;
                     }
-
           }
           getCache();
 
