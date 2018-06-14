@@ -55,7 +55,7 @@ function getDraw()
           setCache(ret_pen);
           function getCache(){
                     var cacheRetrieve = JSON.parse( sessionStorage.getItem("cache") );
-                    if ( cacheRetrieve.expires + day < new Date().getTime() ) {
+                    if ( cacheRetrieve.expires < new Date().getTime() ) {
                         // get a fresh copy
                         setCache(ret_pen);
                     } else {
