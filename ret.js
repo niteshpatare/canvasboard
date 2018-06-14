@@ -11,28 +11,27 @@ function getDraw()
     var tpx = new tpixel();
     var pen_arr = [];
 
-	 lines = null;
+	  lines = null;
     lines = [];
     var ltpx = new cline();
     var lin_arr = [];
 
-	rectangles = null;
+  	rectangles = null;
     rectangles = [];
     var rtpx = new crectangle();
     var rec_arr = [];
 
-	circles = null;
+	  circles = null;
     circles = [];
     var ctpx = new ccircle();
     var cir_arr = [];
 
-	texts = null;
+  	texts = null;
     texts = [];
     var txttpx = new ttext();
     var tex_arr = [];
 
     function processData(xmlhttp) {
-      {
                       //alert(xmlhttp.responseText);
             //pencil
         var ret_pen = xmlhttp.responseXML.documentElement.getElementsByTagName("pencil");
@@ -41,12 +40,33 @@ function getDraw()
         var ret_cir = xmlhttp.responseXML.documentElement.getElementsByTagName("circle");
         var ret_tex = xmlhttp.responseXML.documentElement.getElementsByTagName("textt");
 
-                          var x,y,p,q,ct,ft;
+        var x,y,p,q,ct,ft;
 
-                  //alert(retcolorp[0].firstChild.nodeValue);
+        function setCache(ret_pen){
 
-    //
+                    var mydata = { ret_pen_xml: ret_pen };
+                    var cacheSet = {
+                        data: mydata,
+                        expires: new Date().getTime()
+                    }
+                    sessionStorage.setItem("cache", JSON.stringify(cacheSet));
 
+          }
+          setCache(ret_pen);
+          function getCache(){
+                    var cacheRetrieve = JSON.parse( sessionStorage.getItem("cache") );
+                    if ( cacheRetrieve.expires + day < new Date().getTime() ) {
+                        // get a fresh copy
+                        setCache(ret_pen);
+                    } else {
+                        mydata = cacheRetrieve.data;
+                        ret_pen = cacheRetrieve.data.ret_pen_xml;
+                    }
+
+          }
+          getCache();
+
+        //alert(retcolorp[0].firstChild.nodeValue);
         for(i=0;i<ret_pen.length;i++)
         {
             x = ret_pen[i].getElementsByTagName("x");
@@ -198,7 +218,7 @@ function getDraw()
 
         }
         mainDraw();
-      }
+
     }
 
     function handler() {
