@@ -42,11 +42,11 @@ function getDraw()
 
         var x,y,p,q,ct,ft;
         var mydata = {
-          ret_pen: ret_pen,
-          ret_lin: ret_lin,
-          ret_rec: ret_rec,
-          ret_cir: ret_cir,
-          ret_tex: ret_tex
+          ret_pen: ret_pen[0],
+          ret_lin: ret_lin[0],
+          ret_rec: ret_rec[0],
+          ret_cir: ret_cir[0],
+          ret_tex: ret_tex[0]
         };
         function setCache(mydata){
                     var cacheSet = {
