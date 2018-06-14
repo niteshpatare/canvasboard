@@ -7,7 +7,7 @@ var inhouse = false;
 curtxt = document.getElementById('ColorHex');
 divPreview = document.getElementById('divPreview');
 divPreview.style.background = '#000000';
-var INTERVAL = 10000;
+var INTERVAL = 1000;
 var canvasValid = false;
 var stylePaddingLeft, stylePaddingTop, styleBorderLeft, styleBorderTop;
       var pc1 = "rgb(0, 0, 0)";   //palette
