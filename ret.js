@@ -124,7 +124,7 @@ function getDraw()
             pentag.setAttribute('style',"display:none");
             pentag.setAttribute('id',"pentag"+dt);
             pentag.innerHTML = pEl[i];
-            querySelector('body').appendChild(pentag);
+            document.querySelector('body').appendChild(pentag);
 
             var list = document.getElementsByTagName("#pentag"+dt)[0];
             list.getElementsByTagName("LI")[0].innerHTML = "Milk";
