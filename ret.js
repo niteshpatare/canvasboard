@@ -60,7 +60,7 @@ function getDraw()
         console.log(mydata);
         let penLen = mydata.ret_pen.length;
         for(var i=0;i<penLen;i++) {
-          mydata.ret_pen.[i].["innerHTML"] = mydata.ret_pen.[i].innerHTML;
+          mydata.ret_pen.i.["innerHTML"] = ret_pen[i].innerHTML;
         }
         console.log(mydata);
 
