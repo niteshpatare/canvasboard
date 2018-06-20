@@ -126,7 +126,7 @@ function getDraw()
             pentag.innerHTML = pEl[i];
             document.querySelector('body').appendChild(pentag);
 
-            var list = document.getElementsById("#pentag"+dt)[0];
+            var list = document.getElementById("#pentag"+dt)[0];
             list.getElementsByTagName("LI")[0].innerHTML = "Milk";
 
 
