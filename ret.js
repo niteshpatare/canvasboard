@@ -58,8 +58,12 @@ function getDraw()
           ret_tex: ret_tex
         };
         console.log(mydata);
-        //for(var i=0;i<mydata.ret_pen.length;i++){ mydata.ret_pen.push(ret_pen.innerHTML); }
+        let penLen = mydata.ret_pen.length;
+        for(var i=0;i<penLen;i++) {
+          mydata.ret_pen.[i].["ret_pen.innerHTML"] = mydata.ret_pen.innerHTML;
+        }
         console.log(mydata);
+
         function setCache(mydata){
                     var cacheSet = {
                         data: mydata,
