@@ -116,13 +116,14 @@ function getDraw()
             ret_tex: tempmydata.ret_tex;
           }
         //alert(retcolorp[0].firstChild.nodeValue);
-        for(let i=0;i<ret_pen.pencil.length;i++)
+        var pEl = ret_pen.pencil; var pElLen = ret_pen.pencil.length;
+        for(let i=0;i<pElLen;i++)
         {
-            x = ret_pen[i].getElementsByTagName("x");
-            y = ret_pen[i].getElementsByTagName("y");
+            x = pEl[i].getElementsByTagName("x");
+            y = pEl[i].getElementsByTagName("y");
             //ct = ret_pen[i].getElementsByTagName("c");
-            retcolorp = ret_pen[i].getElementsByTagName("c");
-            retft = ret_pen[i].getElementsByTagName("ft");
+            retcolorp = pEl[i].getElementsByTagName("c");
+            retft = pEl[i].getElementsByTagName("ft");
             for(let j=0;j<x.length;j++)
             {
 
