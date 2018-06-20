@@ -58,7 +58,7 @@ function getDraw()
           ret_tex: ret_tex
         };
         console.log(mydata);
-        for(var i=0;i<mydata.ret_pen.length;i++){ mydata.ret_pen.push(ret_pen.innerHTML); }
+        //for(var i=0;i<mydata.ret_pen.length;i++){ mydata.ret_pen.push(ret_pen.innerHTML); }
         console.log(mydata);
         function setCache(mydata){
                     var cacheSet = {
