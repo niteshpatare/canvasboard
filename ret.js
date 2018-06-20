@@ -34,11 +34,17 @@ function getDraw()
     function processData(xmlhttp) {
                       //alert(xmlhttp.responseText);
             //pencil
-        var ret_pen = xmlhttp.responseXML.documentElement.getElementsByTagName("pencil");
-        var ret_lin = xmlhttp.responseXML.documentElement.getElementsByTagName("line");
-        var ret_rec = xmlhttp.responseXML.documentElement.getElementsByTagName("rect");
-        var ret_cir = xmlhttp.responseXML.documentElement.getElementsByTagName("circle");
-        var ret_tex = xmlhttp.responseXML.documentElement.getElementsByTagName("textt");
+        var ret_pen = {};
+        var ret_lin = {};
+        var ret_rec = {};
+        var ret_cir = {};
+        var ret_tex = {};
+
+        ret_pen = xmlhttp.responseXML.documentElement.getElementsByTagName("pencil");
+        ret_lin = xmlhttp.responseXML.documentElement.getElementsByTagName("line");
+        ret_rec = xmlhttp.responseXML.documentElement.getElementsByTagName("rect");
+        ret_cir = xmlhttp.responseXML.documentElement.getElementsByTagName("circle");
+        ret_tex = xmlhttp.responseXML.documentElement.getElementsByTagName("textt");
 
         if( ret_pen.length === 0 && ret_lin.length === 0 && ret_rec.length === 0 && ret_cir.length === 0 && ret_tex.length === 0){
           return;
