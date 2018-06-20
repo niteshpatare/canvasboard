@@ -39,12 +39,17 @@ function getDraw()
         var ret_rec = {};
         var ret_cir = {};
         var ret_tex = {};
+        var penElems = xmlhttp.responseXML.documentElement.getElementsByTagName("pencil");
+        var rectElems = xmlhttp.responseXML.documentElement.getElementsByTagName("rect");
+        var lineElems = xmlhttp.responseXML.documentElement.getElementsByTagName("line");
+        var circleElems = xmlhttp.responseXML.documentElement.getElementsByTagName("circle");
+        var texttElems = xmlhttp.responseXML.documentElement.getElementsByTagName("textt");
 
-        ret_pen = { 'pencil': xmlhttp.responseXML.documentElement.getElementsByTagName("pencil") };
-        ret_rec = { 'rect': xmlhttp.responseXML.documentElement.getElementsByTagName("rect") };
-        ret_lin = { 'line': xmlhttp.responseXML.documentElement.getElementsByTagName("line") };
-        ret_cir = { 'circle': xmlhttp.responseXML.documentElement.getElementsByTagName("circle") };
-        ret_tex = { 'textt': xmlhttp.responseXML.documentElement.getElementsByTagName("textt") };
+        ret_pen = { 'pencil': penElems };
+        ret_rec = { 'rect': rectElems };
+        ret_lin = { 'line': lineElems };
+        ret_cir = { 'circle': circleElems };
+        ret_tex = { 'textt': texttElems };
 
         if( ret_pen.length === 0 && ret_lin.length === 0 && ret_rec.length === 0 && ret_cir.length === 0 && ret_tex.length === 0){
           return;
