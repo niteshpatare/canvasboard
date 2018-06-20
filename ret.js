@@ -119,10 +119,16 @@ function getDraw()
         var pEl = ret_pen.pencil; var pElLen = ret_pen.pencil.length;
         for(let i=0;i<pElLen;i++)
         {
-            var pentag = document.createElement('a');
+            var dt = new Date();
+            var pentag = document.createElement('span');
             pentag.setAttribute('style',"display:none");
+            pentag.setAttribute('id',"pentag"+dt);
             pentag.innerHTML = pEl[i];
             querySelector('body').appendChild(pentag);
+
+            var list = document.getElementsByTagName("#pentag"+dt)[0];
+            list.getElementsByTagName("LI")[0].innerHTML = "Milk";
+
 
             x = pentag.getElementsByTagName("x");
             y = pentag.innerHTML.getElementsByTagName("y");
