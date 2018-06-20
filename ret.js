@@ -6,27 +6,27 @@ function getDraw()
 
 
 	//var retcolorp;
-    pixels = null;
+    var pixels = null;
     pixels = [];
     var tpx = new tpixel();
     var pen_arr = [];
 
-	  lines = null;
+	  var lines = null;
     lines = [];
     var ltpx = new cline();
     var lin_arr = [];
 
-  	rectangles = null;
+  	var rectangles = null;
     rectangles = [];
     var rtpx = new crectangle();
     var rec_arr = [];
 
-	  circles = null;
+	  var circles = null;
     circles = [];
     var ctpx = new ccircle();
     var cir_arr = [];
 
-  	texts = null;
+  	var texts = null;
     texts = [];
     var txttpx = new ttext();
     var tex_arr = [];
@@ -86,7 +86,7 @@ function getDraw()
                     dataNew = JSON.stringify(dataNew);
                     dataNew = JSON.parse(dataNew);
                     if ( cacheRetrieve.expires < new Date().getTime() && cacheRetrieve.data !== dataNew.data ) {
-                        JSON.parse({'data':mydata})
+                        //JSON.parse({'data':mydata})
                         // get a fresh copy
                         setCache(mydata);
                         setValue(dataNew);
@@ -104,14 +104,14 @@ function getDraw()
             ret_tex: tempmydata.ret_tex;
           }
         //alert(retcolorp[0].firstChild.nodeValue);
-        for(i=0;i<ret_pen.length;i++)
+        for(let i=0;i<ret_pen.length;i++)
         {
             x = ret_pen[i].getElementsByTagName("x");
             y = ret_pen[i].getElementsByTagName("y");
             //ct = ret_pen[i].getElementsByTagName("c");
             retcolorp = ret_pen[i].getElementsByTagName("c");
             retft = ret_pen[i].getElementsByTagName("ft");
-            for(j=0;j<x.length;j++)
+            for(let j=0;j<x.length;j++)
             {
 
                 tpx = new tpixel();
@@ -135,7 +135,7 @@ function getDraw()
         }
 
         //line
-        for(i=0;i<ret_lin.length;i++)
+        for(let i=0;i<ret_lin.length;i++)
         {
         x = ret_lin[i].getElementsByTagName("x1");
             y = ret_lin[i].getElementsByTagName("y1");
@@ -144,7 +144,7 @@ function getDraw()
         ct = ret_lin[i].getElementsByTagName("c");
         ft = ret_lin[i].getElementsByTagName("ft");
         //retcolorp = ret_lin[i].getElementsByTagName("color");
-            for(j=0;j<p.length;j++)
+            for(let j=0;j<p.length;j++)
             {
               ltpx = new cline();
 
@@ -167,7 +167,7 @@ function getDraw()
         }
         //rectangle
 
-        for(i=0;i<ret_rec.length;i++)
+        for(let i=0;i<ret_rec.length;i++)
         {
             x = ret_rec[i].getElementsByTagName("x");
             y = ret_rec[i].getElementsByTagName("y");
@@ -176,7 +176,7 @@ function getDraw()
             ct = ret_rec[i].getElementsByTagName("c");
             ft = ret_rec[i].getElementsByTagName("ft");
             //retcolorp = ret_rec[i].getElementsByTagName("color");
-            for(j=0;j<x.length;j++)
+            for(let j=0;j<x.length;j++)
             {
                 rtpx = new crectangle();
 
@@ -200,7 +200,7 @@ function getDraw()
       }
         //circle
 
-        for(i=0;i<ret_cir.length;i++)
+        for(let i=0;i<ret_cir.length;i++)
         {
             x = ret_cir[i].getElementsByTagName("x");
             y = ret_cir[i].getElementsByTagName("y");
@@ -208,15 +208,15 @@ function getDraw()
         ct = ret_cir[i].getElementsByTagName("c");
         ft = ret_cir[i].getElementsByTagName("ft");
         //retcolorp = ret_cir[i].getElementsByTagName("color");
-        for(j=0;j<x.length;j++)
-        {
-          ctpx = new ccircle();
-          ctpx.x = x[j].firstChild.nodeValue;
-          ctpx.y = y[j].firstChild.nodeValue;
-          ctpx.r = p[j].firstChild.nodeValue;
-          ctpx.c1 = ct[j].firstChild.nodeValue;
-          ctpx.ft = ft[j].firstChild.nodeValue;
-        }
+            for(let j=0;j<x.length;j++)
+            {
+              ctpx = new ccircle();
+              ctpx.x = x[j].firstChild.nodeValue;
+              ctpx.y = y[j].firstChild.nodeValue;
+              ctpx.r = p[j].firstChild.nodeValue;
+              ctpx.c1 = ct[j].firstChild.nodeValue;
+              ctpx.ft = ft[j].firstChild.nodeValue;
+            }
         addCirc(ctpx.x,ctpx.y,ctpx.r,ctpx.c1,ctpx.ft);
               //  tempclr =retcolorp[0].firstChild.nodeValue;
         //alert(tempclr);
@@ -227,7 +227,7 @@ function getDraw()
         //
                       //text
 
-        for(i=0;i<ret_tex.length;i++)
+        for(let i=0;i<ret_tex.length;i++)
         {
         x = ret_tex[i].getElementsByTagName("x");
         y = ret_tex[i].getElementsByTagName("y");
@@ -235,10 +235,9 @@ function getDraw()
         h = ret_tex[i].getElementsByTagName("td");
         ft = ret_tex[i].getElementsByTagName("ft");
 
-        for(j=0;j<x.length;j++)
+            for(let j=0;j<x.length;j++)
             {
                 txttpx = new ttext();
-
                 txttpx.x = x[j].firstChild.nodeValue;
                 txttpx.y = y[j].firstChild.nodeValue;
                 txttpx.c1 = w[j].firstChild.nodeValue;
@@ -268,8 +267,6 @@ function getDraw()
         console.log('Data not fetched');
       }
     }
-
-
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = handler;
