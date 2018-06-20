@@ -116,7 +116,7 @@ function getDraw()
             ret_tex: tempmydata.ret_tex;
           }
         //alert(retcolorp[0].firstChild.nodeValue);
-        for(let i=0;i<ret_pen.length;i++)
+        for(let i=0;i<ret_pen.pencil.length;i++)
         {
             x = ret_pen[i].getElementsByTagName("x");
             y = ret_pen[i].getElementsByTagName("y");
