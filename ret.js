@@ -119,7 +119,11 @@ function getDraw()
         var pEl = ret_pen.pencil; var pElLen = ret_pen.pencil.length;
         for(let i=0;i<pElLen;i++)
         {
-            var pentag = document.createElement('span').innerHTML=pEl[i];
+            var pentag = document.createElement('a');
+            pentag.setAttribute('style',"display:none");
+            pentag.innerHTML = pEl[i];
+            querySelector('body').appendChild(pentag);
+
             x = pentag.getElementsByTagName("x");
             y = pentag.innerHTML.getElementsByTagName("y");
             //ct = ret_pen[i].getElementsByTagName("c");
