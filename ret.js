@@ -78,7 +78,7 @@ function getDraw()
           ret_tex: ret_tex
         };
         console.log(mydata);
-
+        var fstCache = sessionStorage.getItem("cache");
         function setCache(mydata){
                     var cacheSet = {
                         data: mydata,
@@ -87,7 +87,9 @@ function getDraw()
                     sessionStorage.setItem("cache", JSON.stringify(cacheSet));
 
           }
-          setCache(mydata);
+          if(!fstCache){
+            setCache(mydata);
+          }
           function getCache(){
                     var cacheRetrieve = JSON.parse( sessionStorage.getItem("cache") );
                     var dataNew = {
