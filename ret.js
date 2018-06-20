@@ -126,15 +126,15 @@ function getDraw()
             pentag.innerHTML = pEl[i];
             document.querySelector('body').appendChild(pentag);
 
-            var list = document.getElementById("#pentag"+dt)[0];
-            list.getElementsByTagName("LI")[0].innerHTML = "Milk";
+            var pentaglist = document.getElementById("#pentag"+dt)[0];
 
+            console.log(pentaglist.getElementsByTagName("x")[0].innerHTML);
 
-            x = pentag.getElementsByTagName("x");
-            y = pentag.innerHTML.getElementsByTagName("y");
+            x = pentaglist.getElementsByTagName("x");
+            y = pentaglist.getElementsByTagName("y");
             //ct = ret_pen[i].getElementsByTagName("c");
-            retcolorp = pentag.getElementsByTagName("c");
-            retft = pentag.getElementsByTagName("ft");
+            retcolorp = pentaglist.getElementsByTagName("c");
+            retft = pentaglist.getElementsByTagName("ft");
             for(let j=0;j<x.length;j++)
             {
 
