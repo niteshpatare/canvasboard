@@ -45,11 +45,26 @@ function getDraw()
         var circleElems = xmlhttp.responseXML.documentElement.getElementsByTagName("circle");
         var texttElems = xmlhttp.responseXML.documentElement.getElementsByTagName("textt");
 
-        ret_pen = { 'pencil': penElems };
-        ret_rec = { 'rect': rectElems };
-        ret_lin = { 'line': lineElems };
-        ret_cir = { 'circle': circleElems };
-        ret_tex = { 'textt': texttElems };
+        ret_pen = { 'pencil': [] };
+        ret_rec = { 'rect': [] };
+        ret_lin = { 'line': [] };
+        ret_cir = { 'circle': [] };
+        ret_tex = { 'textt': [] };
+
+        let penLen = penElems.length;
+        for(var i=0;i<penLen;i++) {
+          var penValue =  penElems[i].innerHTML;
+          ret_pen.pencil.push(penValue);
+        }
+
+        let lineLen = lineElems.length;
+        for(var i=0;i<lineElems;i++) {
+          var lineValue =  lineElems[i].innerHTML;
+          ret_lin.line.push(lineValue);
+        }
+
+        console.log(ret_pen);
+        console.log(ret_lin);
 
         if( ret_pen.length === 0 && ret_lin.length === 0 && ret_rec.length === 0 && ret_cir.length === 0 && ret_tex.length === 0){
           return;
@@ -62,11 +77,6 @@ function getDraw()
           ret_cir: ret_cir,
           ret_tex: ret_tex
         };
-        console.log(mydata);
-        // let penLen = mydata.ret_pen.length;
-        // for(var i=0;i<penLen;i++) {
-        //   mydata.ret_pen.i.innerHTML = ret_pen[i].innerHTML;
-        // }
         console.log(mydata);
 
         function setCache(mydata){
