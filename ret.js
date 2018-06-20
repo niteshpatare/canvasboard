@@ -126,7 +126,7 @@ function getDraw()
             pentag.innerHTML = pEl[i];
             document.querySelector('body').appendChild(pentag);
 
-            var pentaglist = document.getElementById("#pentag"+dt)[0];
+            var pentaglist = document.getElementById("pentag"+dt);
 
             console.log(pentaglist.getElementsByTagName("x")[0].innerHTML);
 
