@@ -86,7 +86,7 @@ function getDraw()
                     dataNew = JSON.stringify(dataNew);
                     dataNew = JSON.parse(dataNew);
                     if ( cacheRetrieve.expires < new Date().getTime() && cacheRetrieve.data !== dataNew.data ) {
-                        JSON.parse({data:mydata})
+                        JSON.parse({'data':mydata})
                         // get a fresh copy
                         setCache(mydata);
                         setValue(dataNew);
