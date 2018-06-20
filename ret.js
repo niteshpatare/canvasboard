@@ -40,7 +40,7 @@ function getDraw()
         var ret_cir = xmlhttp.responseXML.documentElement.getElementsByTagName("circle");
         var ret_tex = xmlhttp.responseXML.documentElement.getElementsByTagName("textt");
 
-        if( ret_pen.length === 0 && ret_pen.length === 0 && ret_pen.length === 0 && ret_pen.length === 0 && ret_pen.length === 0){
+        if( ret_pen.length === 0 && ret_lin.length === 0 && ret_rec.length === 0 && ret_cir.length === 0 && ret_tex.length === 0){
           return;
         }
         var x,y,p,q,ct,ft;
@@ -51,6 +51,9 @@ function getDraw()
           ret_cir: ret_cir,
           ret_tex: ret_tex
         };
+        console.log(mydata);
+        for(var i=0;i<mydata.ret_pen.length;i++){ mydata.ret_pen.push(ret_pen.innerHTML); }
+        console.log(mydata);
         function setCache(mydata){
                     var cacheSet = {
                         data: mydata,
