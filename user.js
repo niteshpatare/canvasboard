@@ -30,11 +30,11 @@ function tpixel(){
     this.x = 0;
     this.y = 0;
 }
-
+var HEIGHT, WIDTH;
 function init2() {
   canvas = document.getElementById('canvas2');
-  var HEIGHT = canvas.height;
-  var WIDTH = canvas.width;
+  HEIGHT = canvas.height;
+  WIDTH = canvas.width;
   ctx = canvas.getContext('2d');
 
   context = canvas.getContext('2d');
